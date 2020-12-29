@@ -37,6 +37,12 @@ export const entity_manager = (() => {
             entity.setParent(this);
             entity.setName(name);
         }
+
+        update(timeElapsed) {
+            for (let e of this._entities) {
+                e.update(timeElapsed);
+            }
+        }
     }
 
     return {

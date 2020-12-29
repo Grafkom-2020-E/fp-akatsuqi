@@ -3,6 +3,11 @@ import { entity } from './component/entity.js';
 import { entity_manager } from './component/entity-manager.js';
 import { math } from './component/math.js';
 import { gltf } from './component/gltf.js';
+import { player_input } from './component/player-input.js';
+import { player_entity } from './component/player-entity.js';
+import { third_person_camera } from './component/third-person-camera.js';
+import { spatial_hash_grid } from './component/spatial-hash-grid.js';
+import { spatial_grid_controller } from './component/spatial-grid-controller.js';
 
 const _VS = `
 varying vec3 vWorldPosition;
@@ -105,10 +110,60 @@ class Main {
         this._sun = light;
         this.initPlane();
         this._entityManager = new entity_manager.EntityManager();
+        this._grid = new spatial_hash_grid.SpatialHashGrid(
+            [[-1000, -1000], [1000, 1000]], [100, 100]);
+        this.loadPlayer();
+        this.loadAnimalsCage();
         this.loadClouds();
         this.loadSky();
         this._previousRAF = null;
         this.requestAnimation();
+    }
+
+    loadAnimalsCage(){
+        const pos = new THREE.Vector3(
+            (Math.random() * 2.0 - 1.0) * 500,
+            0,
+            (Math.random() * 2.0 - 1.0) * 500
+        );
+        const e = new entity.Entity();
+        e.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/fur_tree/',
+            resourceName: 'scene.gltf',
+            scale: 0.25,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }));
+        e.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e.setPosition(pos);
+        this._entityManager.addEntity(e);
+        e.setActive(false);
+    }
+
+    addPlayerCamera(){
+        const camera = new entity.Entity();
+        camera.addComponent(
+            new third_person_camera.ThirdPersonCamera({
+                camera: this._camera,
+                target: this._entityManager.getEntities('player')}));
+        this._entityManager.addEntity(camera, 'player-camera');
+    }
+
+    loadPlayer() {
+        const params = {
+            camera: this._camera,
+            scene: this._scene,
+        };
+        const player = new entity.Entity();
+        player.addComponent(new player_input.BasicCharacterControllerInput(params));
+        player.addComponent(new player_entity.BasicCharacterController(params));
+        this._entityManager.addEntity(player, 'player');
+
+        this.addPlayerCamera();
     }
 
     loadClouds() {
@@ -168,14 +223,33 @@ class Main {
         this._threeJS.setSize(window.innerWidth, window.innerHeight);
     }
 
+    updateSun() {
+        const player = this._entityManager.getEntities('player');
+        const pos = player._position;
+    
+        this._sun.position.copy(pos);
+        this._sun.position.add(new THREE.Vector3(-10, 500, -10));
+        this._sun.target.position.copy(pos);
+        this._sun.updateMatrixWorld();
+        this._sun.target.updateMatrixWorld();
+      }
+
     requestAnimation(){
         requestAnimationFrame((t) => {
             if (this._previousRAF === null) {
               this._previousRAF = t;
             }      
-            this.requestAnimation();      
+            this.requestAnimation();
             this._threeJS.render(this._scene, this._camera);
+            this.step(t - this._previousRAF);
+            this._previousRAF = t;
         });
+    }
+
+    step(timeElapsed) {
+        const timeElapsedS = Math.min(1.0 / 30.0, timeElapsed * 0.001);    
+        this.updateSun();    
+        this._entityManager.update(timeElapsedS);
     }
 }
 
