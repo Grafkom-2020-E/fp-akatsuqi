@@ -114,6 +114,8 @@ class Main {
             [[-1000, -1000], [1000, 1000]], [100, 100]);
         this.loadPlayer();
         this.loadAnimalsCage();
+        this.loadDeer();
+        this.loadElephant();
         this.loadClouds();
         this.loadSky();
         this._previousRAF = null;
@@ -143,6 +145,57 @@ class Main {
         this._entityManager.addEntity(e);
         e.setActive(false);
     }
+
+    loadDeer(){
+        const pos = new THREE.Vector3(
+            10,
+            0,
+            10
+        );
+        const e = new entity.Entity();
+        e.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/rusa/',
+            resourceName: 'scene.gltf',
+            scale: 2,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }));
+        e.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e.setPosition(pos);
+        this._entityManager.addEntity(e);
+        e.setActive(false);
+    }
+
+    loadElephant(){
+        const pos = new THREE.Vector3(
+            50,
+            0,
+            10
+        );
+        const e = new entity.Entity();
+        e.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/elephant/',
+            resourceName: 'scene.gltf',
+            scale: 0.04,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }) 
+        );
+        e.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e.setPosition(pos);
+        this._entityManager.addEntity(e);
+        e.setActive(false);
+    }
+
+    
 
     addPlayerCamera(){
         const camera = new entity.Entity();
