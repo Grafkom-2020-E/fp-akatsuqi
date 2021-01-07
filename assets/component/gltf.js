@@ -43,6 +43,11 @@ export const gltf = (() => {
       this._params.scene.add(this._target);
 
       this._target.scale.setScalar(this._params.scale);
+      if (this._params.rotation) {
+        this._target.rotation.x = this._params.rotation[0];
+        this._target.rotation.y = this._params.rotation[1];
+        this._target.rotation.z = this._params.rotation[2];
+      }
       this._target.position.copy(this._parent._position);
 
       let texture = null;
@@ -139,7 +144,7 @@ export const gltf = (() => {
       this._target = obj;
       this._params.scene.add(this._target);
 
-      this._target.scale.setScalar(this._params.scale);
+      this._target.scale.setScalar(this._params.scale);      
       this._target.position.copy(this._parent._position);
 
       this.broadcast({

@@ -125,6 +125,7 @@ export const player_entity = (() => {
       const grid = this.getComponent('SpatialGridController');
       const nearby = grid.FindNearbyEntities(5)
       const collisions = [];
+      console.log(pos)
 
       for (let i = 0; i < nearby.length; ++i) {
         const e = nearby[i].entity;

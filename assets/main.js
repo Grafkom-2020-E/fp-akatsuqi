@@ -8,6 +8,7 @@ import { player_entity } from './component/player-entity.js';
 import { third_person_camera } from './component/third-person-camera.js';
 import { spatial_hash_grid } from './component/spatial-hash-grid.js';
 import { spatial_grid_controller } from './component/spatial-grid-controller.js';
+import { npc_factory } from './component/npc-factory.js';
 
 const _VS = `
 varying vec3 vWorldPosition;
@@ -58,7 +59,7 @@ class Main {
 
     initCamera(){
         const fov = 60;
-        const aspect = 1920 / 1080;
+        const aspect = window.innerWidth / window.innerHeight;
         const near = 1.0;
         const far = 10000.0;
         this._camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
@@ -112,46 +113,137 @@ class Main {
         this._entityManager = new entity_manager.EntityManager();
         this._grid = new spatial_hash_grid.SpatialHashGrid(
             [[-1000, -1000], [1000, 1000]], [100, 100]);
+        this._npcFactory = new npc_factory();
         this.loadPlayer();
-        this.loadAnimalsCage();
+        this.loadDeerCage();
         this.loadDeer();
         this.loadElephant();
         this.loadArmadillo();
+        this.loadFenceArmadillo();
         this.loadClouds();
         this.loadSky();
         this._previousRAF = null;
         this.requestAnimation();
     }
 
-    loadAnimalsCage(){
+    loadFenceArmadillo(){
+        
         const pos = new THREE.Vector3(
-            (Math.random() * 2.0 - 1.0) * 500,
+            100,
             0,
-            (Math.random() * 2.0 - 1.0) * 500
+            10
         );
-        const e = new entity.Entity();
-        e.addComponent(new gltf.StaticModelComponent({
+        const pos1 = new THREE.Vector3(
+            150,
+            0,
+            10
+        );
+        
+
+    }
+
+    loadDeerCage(){
+        let pos = new THREE.Vector3(
+            15, 0, 10
+        );        
+        const grid = this._grid;
+        let gltf_comp = {
             scene: this._scene,
-            resourcePath: './model/fur_tree/',
+            resourcePath: './model/fence_wood/',
             resourceName: 'scene.gltf',
-            scale: 0.25,
+            scale: 5,
             emissive: new THREE.Color(0x000000),
             specular: new THREE.Color(0x000000),
             receiveShadow: true,
             castShadow: true,
-        }));
-        e.addComponent(
-            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
-        e.setPosition(pos);
+        }
+        const e = this._npcFactory.newNPC({grid, pos, gltf_comp});
         this._entityManager.addEntity(e);
         e.setActive(false);
+        pos = new THREE.Vector3(
+            23, 0, 31
+        );
+        const e1 = this._npcFactory.newNPC({grid, gltf_comp, pos});
+        this._entityManager.addEntity(e1);
+        e1.setActive(false);
+        pos = new THREE.Vector3(
+            31, 0, 52
+        );
+        gltf_comp = {
+            scene: this._scene,
+            resourcePath: './model/fence_wood/',
+            resourceName: 'scene.gltf',
+            scale: 5,
+            rotation: [0, 1.5, 0],
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }
+        const e2 = this._npcFactory.newNPC({grid, gltf_comp, pos});        
+        this._entityManager.addEntity(e2);
+        e2.setActive(false);
+
+        pos = new THREE.Vector3(
+            15, 0, 10
+        );
+        gltf_comp = {
+            scene: this._scene,
+            resourcePath: './model/fence_wood/',
+            resourceName: 'scene.gltf',
+            scale: 5,
+            rotation: [0, 1.5, 0],
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }
+        const e3 = this._npcFactory.newNPC({grid, gltf_comp, pos});        
+        this._entityManager.addEntity(e3);
+        e3.setActive(false);
+
+        pos = new THREE.Vector3(
+            35, 0, 2
+        );
+        gltf_comp = {
+            scene: this._scene,
+            resourcePath: './model/fence_wood/',
+            resourceName: 'scene.gltf',
+            scale: 5,
+            // rotation: [0, 1, 0],
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }
+        const e4 = this._npcFactory.newNPC({grid, gltf_comp, pos});        
+        this._entityManager.addEntity(e4);
+        e4.setActive(false);
+
+        pos = new THREE.Vector3(
+            45, 0, 25
+        );
+        gltf_comp = {
+            scene: this._scene,
+            resourcePath: './model/fence_wood/',
+            resourceName: 'scene.gltf',
+            scale: 5,
+            // rotation: [0, 1, 0],
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }
+        const e5 = this._npcFactory.newNPC({grid, gltf_comp, pos});        
+        this._entityManager.addEntity(e5);
+        e5.setActive(false);
     }
 
     loadDeer(){
         const pos = new THREE.Vector3(
-            10,
+            25,
             0,
-            10
+            25
         );
         const e = new entity.Entity();
         e.addComponent(new gltf.StaticModelComponent({
@@ -173,7 +265,7 @@ class Main {
 
     loadElephant(){
         const pos = new THREE.Vector3(
-            50,
+            80,
             0,
             10
         );
