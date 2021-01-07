@@ -187,8 +187,7 @@ class Main {
             specular: new THREE.Color(0x000000),
             receiveShadow: true,
             castShadow: true,
-        }) 
-        );
+        }) );
         e.addComponent(
             new spatial_grid_controller.SpatialGridController({grid: this._grid}));
         e.setPosition(pos);
@@ -237,6 +236,7 @@ class Main {
         const player = new entity.Entity();
         player.addComponent(new player_input.BasicCharacterControllerInput(params));
         player.addComponent(new player_entity.BasicCharacterController(params));
+        player.addComponent(new spatial_grid_controller.SpatialGridController({grid: this._grid}));
         this._entityManager.addEntity(player, 'player');
 
         this.addPlayerCamera();
@@ -323,8 +323,8 @@ class Main {
     }
 
     step(timeElapsed) {
-        const timeElapsedS = Math.min(1.0 / 30.0, timeElapsed * 0.001);    
-        this.updateSun();    
+        const timeElapsedS = Math.min(1.0 / 30.0, timeElapsed * 0.001);
+        this.updateSun();
         this._entityManager.update(timeElapsedS);
     }
 }

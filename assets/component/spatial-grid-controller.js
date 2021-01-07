@@ -10,7 +10,7 @@ export const spatial_grid_controller = (() => {
       this._grid = params.grid;
     }
 
-    InitComponent() {
+    initComponent() {
       const pos = [
           this._parent._position.x,
           this._parent._position.z,
@@ -18,10 +18,10 @@ export const spatial_grid_controller = (() => {
 
       this._client = this._grid.NewClient(pos, [1, 1]);
       this._client.entity = this._parent;
-      this.registerHandler('update.position', (m) => this._OnPosition(m));
+      this.registerHandler('update.position', (m) => this.onPosition(m));
     }
 
-    _OnPosition(msg) {
+    onPosition(msg) {
       this._client.position = [msg.value.x, msg.value.z];
       this._grid.UpdateClient(this._client);
     }

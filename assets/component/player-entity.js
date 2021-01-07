@@ -54,11 +54,11 @@ export const player_entity = (() => {
     }
 
     initComponent() {
-      this.registerHandler('health.death', (m) => { this.onDeath(m); });
+      // this.registerHandler('health.death', (m) => { this.onDeath(m); });
     }
 
     onDeath(msg) {
-      this._stateMachine.setState('death');
+      // this._stateMachine.setState('death');
     }
 
     loadModals() {
@@ -113,30 +113,29 @@ export const player_entity = (() => {
       });
     }
 
-    // findIntersection(pos) {
-    //   const isAlive = (c) => {
-    //     const h = c.entity.getComponent('HealthComponent');
-    //     if (!h) {
-    //       return true;
-    //     }
-    //     return h._health > 0;
-    //   };
+    findIntersection(pos) {
+      const isAlive = (c) => {
+        const h = c.entity.getComponent('HealthComponent');
+        if (!h) {
+          return true;
+        }
+        return h._health > 0;
+      };
 
-    //   const grid = this.getComponent('SpatialGridController');
-    //   const nearby = grid.FindNearbyEntities(5).filter(e => isAlive(e));
-    //   const collisions = [];
+      const grid = this.getComponent('SpatialGridController');
+      const nearby = grid.FindNearbyEntities(5)
+      const collisions = [];
 
-    //   for (let i = 0; i < nearby.length; ++i) {
-    //     const e = nearby[i].entity;
-    //     const d = ((pos.x - e._position.x) ** 2 + (pos.z - e._position.z) ** 2) ** 0.5;
-
-    //     // HARDCODED
-    //     if (d <= 4) {
-    //       collisions.push(nearby[i].entity);
-    //     }
-    //   }
-    //   return collisions;
-    // }
+      for (let i = 0; i < nearby.length; ++i) {
+        const e = nearby[i].entity;
+        const d = ((pos.x - e._position.x) ** 2 + (pos.z - e._position.z) ** 2) ** 0.5;
+        // HARDCODED
+        if (d <= 4) {
+          collisions.push(nearby[i].entity);
+        }
+      }
+      return collisions;
+    }
 
     update(timeInSeconds) {
       if (!this._stateMachine._currentState) {
@@ -224,10 +223,10 @@ export const player_entity = (() => {
       pos.add(forward);
       pos.add(sideways);
 
-      // const collisions = this.findIntersection(pos);
-      // if (collisions.length > 0) {
-      //   return;
-      // }
+      const collisions = this.findIntersection(pos);      
+      if (collisions.length > 0) {
+        return;
+      }
 
       controlObject.position.copy(pos);
       this._position.copy(pos);

@@ -20,7 +20,7 @@ export const gltf = (() => {
       this.loadModels();
     }
   
-    initComponentModel() {
+    initComponent() {
       this.registerHandler('update.position', (m) => { this.onPosition(m); });
     }
 
