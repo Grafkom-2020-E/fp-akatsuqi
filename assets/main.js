@@ -116,6 +116,7 @@ class Main {
         this.loadAnimalsCage();
         this.loadDeer();
         this.loadElephant();
+        this.loadArmadillo();
         this.loadClouds();
         this.loadSky();
         this._previousRAF = null;
@@ -194,8 +195,30 @@ class Main {
         this._entityManager.addEntity(e);
         e.setActive(false);
     }
-
-    
+    loadArmadillo(){
+        const pos = new THREE.Vector3(
+            90,
+            1,
+            10
+        );
+        const e = new entity.Entity();
+        e.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/armadillo/',
+            resourceName: 'scene.gltf',
+            scale: 1,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }) 
+        );
+        e.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e.setPosition(pos);
+        this._entityManager.addEntity(e);
+        e.setActive(false);
+    }
 
     addPlayerCamera(){
         const camera = new entity.Entity();
