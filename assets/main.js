@@ -34,10 +34,27 @@ void main() {
   gl_FragColor = vec4( mix( bottomColor, topColor, max( pow( max( h , 0.0), exponent ), 0.0 ) ), 1.0 );
 }`;
 
-
 class Main {
-    constructor(){
+    constructor(){        
+        this.initLoading();
         this.initialize();
+    }
+    initLoading(){
+        this.loadingDuration = 5000;
+        this.loadingBarElement = null;
+        this.loadingTime = 0;
+        this.loadingBarElement = document.getElementById('lg-loading-bar');
+        this.isLoading = true;
+    }
+    updateLoadingBar(time) {        
+        this.loadingTime += time;
+        document.getElementById('loading-percent').innerHTML = Math.round(this.loadingTime/this.loadingDuration * 100) ;
+        this.loadingBarElement.style.transform = `scaleX(${this.loadingTime/this.loadingDuration})`;
+        if (this.loadingTime >= this.loadingDuration){
+            this.isLoading = false
+            const container = document.getElementById('container');
+            container.style.display = 'block';
+        }
     }
 
     initThreeJS(){
@@ -725,8 +742,11 @@ class Main {
     requestAnimation(){
         requestAnimationFrame((t) => {
             if (this._previousRAF === null) {
-              this._previousRAF = t;
+                this._previousRAF = t;
             }      
+            if (this.isLoading) {
+                this.updateLoadingBar(t - this._previousRAF)
+            }
             this.requestAnimation();
             this._threeJS.render(this._scene, this._camera);
             this.step(t - this._previousRAF);
@@ -744,5 +764,13 @@ class Main {
 let _APP = null;
 
 window.addEventListener('DOMContentLoaded', () => {
-  _APP = new Main();
+  const btn = document.getElementsByClassName('button')[0];
+  btn.addEventListener('click', e =>{    
+    const landingLogo = document.querySelector('#landing-logo');
+    landingLogo.style.visibility = 'hidden'
+
+    const loading = document.querySelector('#lg-loading');
+    loading.style.visibility = 'visible'
+    _APP = new Main();
+  })
 });

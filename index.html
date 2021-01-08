@@ -8,15 +8,25 @@
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+    <div class="container" style="display: none;" id="container"></div>
     <center>
     <div class="bg-main">
         <div class="mainpage">
-            <img src = "assets/img/akatzooqilogo.png" style="height: 40%; width:40%"><br>
-            <form method="get" action="index1.html">
-                <button class = "button" type="submit">Enter The Zoo!</button>
-            </form><br> 
+            <div id="landing-logo">
+                <img src = "assets/img/akatzooqilogo.png" style="height: 40%; width:40%"><br>
+                <a class = "button">Enter The Zoo!</a>
+            </div>
+            <div id="lg-loading" style="visibility: hidden;" class="lg-overlay shade-in-out dark-grad">
+                <p style="font-size: 18px;">Tunggu Sebentar Ya...</p>
+                <div id="lg-loading-frame"></div>
+                <div id="lg-loading-bar"></div>
+                <div id="lg-loading-percent">
+                    <h3><span id="loading-percent">0</span>% <img style="width: 20px;height:100%;" src="assets/img/akatzooqilogo.png" alt=""></h3>
+                </div>
+            </div>
         </div>
     </div>
     </center>
+    <script src="assets/main.js" type="module"></script>
 </body>
 </html>
