@@ -1,0 +1,11 @@
+Model Information:
+* title:	Bear+motions
+* source:	https://sketchfab.com/3d-models/bearmotions-12890cbf869746a9bb41f76979cd9c9f
+* author:	Pablo444 (https://sketchfab.com/Pablo444)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Bear+motions" (https://sketchfab.com/3d-models/bearmotions-12890cbf869746a9bb41f76979cd9c9f) by Pablo444 (https://sketchfab.com/Pablo444) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

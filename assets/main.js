@@ -119,6 +119,14 @@ class Main {
         this.loadGate();
         this.loadElephant();
         this.loadArmadillo();
+        this.loadGiraffe();
+        this.loadTiger();
+        this.loadTortoise();
+        this.loadHorse();
+        this.loadGorilla();
+        this.loadDonkey();
+        this.loadBear();
+        this.loadBabyGiraffe();
         this.loadClouds();
         this.loadSky();
         this._previousRAF = null;
@@ -375,6 +383,214 @@ class Main {
             resourcePath: './model/armadillo/',
             resourceName: 'scene.gltf',
             scale: 1,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }) 
+        );
+        e.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e.setPosition(pos);
+        this._entityManager.addEntity(e);
+        e.setActive(false);
+    }
+
+    loadGiraffe(){
+        const pos = new THREE.Vector3(
+            65,
+            0,
+            90
+        );
+        const e = new entity.Entity();
+        e.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/girafe/',
+            resourceName: 'scene.gltf',
+            rotation: [0, -1.5, 0],
+            scale: 4,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }) 
+        );
+        e.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e.setPosition(pos);
+        this._entityManager.addEntity(e);
+        e.setActive(false);
+    }
+
+    loadBabyGiraffe(){
+        const pos = new THREE.Vector3(
+            65,
+            0,
+            80
+        );
+        const e = new entity.Entity();
+        e.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/girafe/',
+            resourceName: 'scene.gltf',
+            rotation: [0, -1.5, 0],
+            scale: 2,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }) 
+        );
+        e.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e.setPosition(pos);
+        this._entityManager.addEntity(e);
+        e.setActive(false);
+    }
+
+    loadTiger(){
+        const pos = new THREE.Vector3(
+            -65,
+            0,
+            90
+        );
+        const e = new entity.Entity();
+        e.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/tiger_walk_v02/',
+            resourceName: 'scene.gltf',
+            rotation: [0, 1.5, 0],
+            scale: 1,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }) 
+        );
+        e.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e.setPosition(pos);
+        this._entityManager.addEntity(e);
+        e.setActive(false);
+    }
+
+    loadTortoise(){
+        const pos = new THREE.Vector3(
+            0,
+            2.4,
+            60
+        );
+        const e = new entity.Entity();
+        e.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/tortoise/',
+            resourceName: 'scene.gltf',
+            rotation: [0, 1.5, 0],
+            scale: 6,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }) 
+        );
+        e.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e.setPosition(pos);
+        this._entityManager.addEntity(e);
+        e.setActive(false);
+    }
+
+    loadHorse(){
+        const pos = new THREE.Vector3(
+            -35,
+            0,
+            90
+        );
+        const e = new entity.Entity();
+        e.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/horse/',
+            resourceName: 'scene.gltf',
+            rotation: [0, 1.5, 0],
+            scale: 0.025,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }) 
+        );
+        e.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e.setPosition(pos);
+        this._entityManager.addEntity(e);
+        e.setActive(false);
+    }
+
+    loadGorilla(){
+        const pos = new THREE.Vector3(
+            -65,
+            2.7,
+            90
+        );
+        const e = new entity.Entity();
+        e.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/gorilla/',
+            resourceName: 'scene.gltf',
+            rotation: [0, 1.5, 0],
+            scale: 0.025,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }) 
+        );
+        e.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e.setPosition(pos);
+        this._entityManager.addEntity(e);
+        e.setActive(false);
+    }
+
+    loadDonkey(){
+        const pos = new THREE.Vector3(
+            -65,
+            0,
+            130
+        );
+        const e = new entity.Entity();
+        e.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/donkey/',
+            resourceName: 'scene.gltf',
+            rotation: [0, 1.5, 0],
+            scale: 5,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }) 
+        );
+        e.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e.setPosition(pos);
+        this._entityManager.addEntity(e);
+        e.setActive(false);
+    }
+
+    loadBear(){
+        const pos = new THREE.Vector3(
+            -65,
+            0,
+            110
+        );
+        const e = new entity.Entity();
+        e.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/bear/',
+            resourceName: 'scene.gltf',
+            rotation: [0, 1.5, 0],
+            scale: 0.09,
             emissive: new THREE.Color(0x000000),
             specular: new THREE.Color(0x000000),
             receiveShadow: true,
