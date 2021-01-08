@@ -1,0 +1,11 @@
+Model Information:
+* title:	tiger walk v02
+* source:	https://sketchfab.com/3d-models/tiger-walk-v02-733afd855f5d4c378f041cc89e231770
+* author:	Unity  (shehab house) (https://sketchfab.com/shahabahmed)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "tiger walk v02" (https://sketchfab.com/3d-models/tiger-walk-v02-733afd855f5d4c378f041cc89e231770) by Unity  (shehab house) (https://sketchfab.com/shahabahmed) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
