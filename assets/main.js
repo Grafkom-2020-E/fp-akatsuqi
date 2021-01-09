@@ -296,9 +296,9 @@ class Main {
 
     loadElephant(){
         let pos = new THREE.Vector3(
-            -30,
+            20,
             0,
-            40
+            280
         );
         const e6 = new entity.Entity();
         e6.addComponent(new gltf.StaticModelComponent({
@@ -306,6 +306,7 @@ class Main {
             resourcePath: './model/elephant/',
             resourceName: 'scene.gltf',
             scale: 0.04,
+            rotation: [0, 3.5, 0],
             emissive: new THREE.Color(0x000000),
             specular: new THREE.Color(0x000000),
             receiveShadow: true,
@@ -415,15 +416,16 @@ class Main {
 
     loadArmadillo(){
         const pos = new THREE.Vector3(
-            90,
+            60,
             1,
-            10
+            75
         );
         const e = new entity.Entity();
         e.addComponent(new gltf.StaticModelComponent({
             scene: this._scene,
             resourcePath: './model/armadillo/',
             resourceName: 'scene.gltf',
+            rotation: [0, -1, 0],
             scale: 1,
             emissive: new THREE.Color(0x000000),
             specular: new THREE.Color(0x000000),
@@ -440,16 +442,16 @@ class Main {
 
     loadGiraffe(){
         const pos = new THREE.Vector3(
-            65,
+            90,
             0,
-            90
+            250
         );
         const e = new entity.Entity();
         e.addComponent(new gltf.StaticModelComponent({
             scene: this._scene,
             resourcePath: './model/girafe/',
             resourceName: 'scene.gltf',
-            rotation: [0, -1.5, 0],
+            rotation: [0, 3.5, 0],
             scale: 4,
             emissive: new THREE.Color(0x000000),
             specular: new THREE.Color(0x000000),
@@ -466,16 +468,16 @@ class Main {
 
     loadBabyGiraffe(){
         const pos = new THREE.Vector3(
-            65,
+            95,
             0,
-            80
+            230
         );
         const e = new entity.Entity();
         e.addComponent(new gltf.StaticModelComponent({
             scene: this._scene,
             resourcePath: './model/girafe/',
             resourceName: 'scene.gltf',
-            rotation: [0, -1.5, 0],
+            rotation: [0, 3.5, 0],
             scale: 2,
             emissive: new THREE.Color(0x000000),
             specular: new THREE.Color(0x000000),
@@ -492,16 +494,16 @@ class Main {
 
     loadTiger(){
         const pos = new THREE.Vector3(
-            -65,
+            -30,
             0,
-            90
+            200
         );
         const e = new entity.Entity();
         e.addComponent(new gltf.StaticModelComponent({
             scene: this._scene,
             resourcePath: './model/tiger_walk_v02/',
             resourceName: 'scene.gltf',
-            rotation: [0, 1.5, 0],
+            rotation: [0, -1.5, 0],
             scale: 1,
             emissive: new THREE.Color(0x000000),
             specular: new THREE.Color(0x000000),
@@ -518,16 +520,16 @@ class Main {
 
     loadTortoise(){
         const pos = new THREE.Vector3(
-            0,
+            -30,
             2.4,
-            60
+            80
         );
         const e = new entity.Entity();
         e.addComponent(new gltf.StaticModelComponent({
             scene: this._scene,
             resourcePath: './model/tortoise/',
             resourceName: 'scene.gltf',
-            rotation: [0, 1.5, 0],
+            rotation: [0, 3, 0],
             scale: 6,
             emissive: new THREE.Color(0x000000),
             specular: new THREE.Color(0x000000),
@@ -544,16 +546,16 @@ class Main {
 
     loadHorse(){
         const pos = new THREE.Vector3(
-            -35,
+            -30,
             0,
-            90
+            30
         );
         const e = new entity.Entity();
         e.addComponent(new gltf.StaticModelComponent({
             scene: this._scene,
             resourcePath: './model/horse/',
             resourceName: 'scene.gltf',
-            rotation: [0, 1.5, 0],
+            rotation: [0, 3, 0],
             scale: 0.025,
             emissive: new THREE.Color(0x000000),
             specular: new THREE.Color(0x000000),
@@ -570,16 +572,16 @@ class Main {
 
     loadGorilla(){
         let pos = new THREE.Vector3(
-            -65,
+            70,
             2.7,
-            10
+            120
         );
         const e1 = new entity.Entity();
         e1.addComponent(new gltf.StaticModelComponent({
             scene: this._scene,
             resourcePath: './model/gorilla/',
             resourceName: 'scene.gltf',
-            rotation: [0, 1.5, 0],
+            rotation: [0, -1.5, 0],
             scale: 0.025,
             emissive: new THREE.Color(0x000000),
             specular: new THREE.Color(0x000000),
@@ -693,7 +695,7 @@ class Main {
 
     loadDonkey(){
         const pos = new THREE.Vector3(
-            -65,
+            -20,
             0,
             130
         );
@@ -719,16 +721,16 @@ class Main {
 
     loadBear(){
         const pos = new THREE.Vector3(
-            -65,
+            90,
             0,
-            110
+            190
         );
         const e = new entity.Entity();
         e.addComponent(new gltf.StaticModelComponent({
             scene: this._scene,
             resourcePath: './model/bear/',
             resourceName: 'scene.gltf',
-            rotation: [0, 1.5, 0],
+            rotation: [0, -1.5, 0],
             scale: 0.09,
             emissive: new THREE.Color(0x000000),
             specular: new THREE.Color(0x000000),
