@@ -34,6 +34,9 @@ void main() {
   gl_FragColor = vec4( mix( bottomColor, topColor, max( pow( max( h , 0.0), exponent ), 0.0 ) ), 1.0 );
 }`;
 
+var audio = new Audio ('assets/sounds/mainsound.mp3');
+audio.play()
+
 class Main {
     constructor(){        
         this.initLoading();
