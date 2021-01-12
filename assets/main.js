@@ -136,17 +136,17 @@ class Main {
         this._npcFactory = new npc_factory();
         this.loadPlayer();
         // this.loadDeer();
-        this.loadGate();
+        // this.loadGate();
         this.loadTembokKiri();
         // this.loadElephant();
         // this.loadArmadillo();
         // this.loadGiraffe();
-        // this.loadTiger();
+        this.loadTiger();
         // this.loadTortoise();
         // this.loadHorse();
-        this.loadGorilla();
+        // this.loadGorilla();
         // this.loadDonkey();
-        // this.loadBear();
+        // this.loadBear();?
         // this.loadBabyGiraffe();
         // this.loadClouds();
         this.loadSky();
@@ -496,17 +496,17 @@ class Main {
     }
 
     loadTiger(){
-        const pos = new THREE.Vector3(
-            -30,
+        let pos = new THREE.Vector3(
+            -70,
             0,
-            200
+            230
         );
         const e = new entity.Entity();
         e.addComponent(new gltf.StaticModelComponent({
             scene: this._scene,
             resourcePath: './model/tiger_walk_v02/',
             resourceName: 'scene.gltf',
-            rotation: [0, -1.5, 0],
+            rotation: [0, 0, 0],
             scale: 1,
             emissive: new THREE.Color(0x000000),
             specular: new THREE.Color(0x000000),
@@ -519,13 +519,63 @@ class Main {
         e.setPosition(pos);
         this._entityManager.addEntity(e);
         e.setActive(false);
+
+        pos = new THREE.Vector3(
+            -53,
+            30,
+            210
+        );
+        const e5 = new entity.Entity();
+        e5.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/fencehorse/',
+            resourceName: 'scene.gltf',
+            scale: 30,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+            rotation: [0, 0, 3.14],
+
+        }) 
+        );
+        e5.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e5.setPosition(pos);
+        this._entityManager.addEntity(e5);
+        e5.setActive(false);
+
+        pos = new THREE.Vector3(
+            -53,
+            10,
+            210
+        );
+        const e6 = new entity.Entity();
+        e6.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/fencehorse/',
+            resourceName: 'scene.gltf',
+            scale: 30,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+            rotation: [0, 0, 0],
+
+        }) 
+        );
+        e6.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e6.setPosition(pos);
+        this._entityManager.addEntity(e6);
+        e6.setActive(false);
     }
 
     loadTortoise(){
-        const pos = new THREE.Vector3(
-            -30,
+        let pos = new THREE.Vector3(
+            -50,
             2.4,
-            80
+            95
         );
         const e = new entity.Entity();
         e.addComponent(new gltf.StaticModelComponent({
@@ -545,6 +595,31 @@ class Main {
         e.setPosition(pos);
         this._entityManager.addEntity(e);
         e.setActive(false);
+
+        pos = new THREE.Vector3(
+            -55,
+            0,
+            108.5
+        );
+        const e5 = new entity.Entity();
+        e5.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/tembok2/',
+            resourceName: 'scene.gltf',
+            scale: 0.2,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+            rotation: [0, 0, 0],
+
+        }) 
+        );
+        e5.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e5.setPosition(pos);
+        this._entityManager.addEntity(e5);
+        e5.setActive(false);
     }
 
     loadHorse(){
@@ -598,53 +673,53 @@ class Main {
         this._entityManager.addEntity(e1);
         e1.setActive(false);
 
-        pos = new THREE.Vector3(
-            -50,
-            0,
-            10
-        );
-        const e2 = new entity.Entity();
-        e2.addComponent(new gltf.StaticModelComponent({
-            scene: this._scene,
-            resourcePath: './model/gorilla/',
-            resourceName: 'scene.gltf',
-            rotation: [0, 1, 0],
-            scale: 0.01,
-            emissive: new THREE.Color(0x000000),
-            specular: new THREE.Color(0x000000),
-            receiveShadow: true,
-            castShadow: true,
-        }) 
-        );
-        e2.addComponent(
-            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
-        e2.setPosition(pos);
-        this._entityManager.addEntity(e2);
-        e2.setActive(false);
+        // pos = new THREE.Vector3(
+        //     -50,
+        //     0,
+        //     10
+        // );
+        // const e2 = new entity.Entity();
+        // e2.addComponent(new gltf.StaticModelComponent({
+        //     scene: this._scene,
+        //     resourcePath: './model/gorilla/',
+        //     resourceName: 'scene.gltf',
+        //     rotation: [0, 1, 0],
+        //     scale: 0.01,
+        //     emissive: new THREE.Color(0x000000),
+        //     specular: new THREE.Color(0x000000),
+        //     receiveShadow: true,
+        //     castShadow: true,
+        // }) 
+        // );
+        // e2.addComponent(
+        //     new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        // e2.setPosition(pos);
+        // this._entityManager.addEntity(e2);
+        // e2.setActive(false);
 
-        pos = new THREE.Vector3(
-            -60,
-            3,
-            25
-        );
-        const e3 = new entity.Entity();
-        e3.addComponent(new gltf.StaticModelComponent({
-            scene: this._scene,
-            resourcePath: './model/gorilla/',
-            resourceName: 'scene.gltf',
-            rotation: [0, 2, 0],
-            scale: 0.028,
-            emissive: new THREE.Color(0x000000),
-            specular: new THREE.Color(0x000000),
-            receiveShadow: true,
-            castShadow: true,
-        }) 
-        );
-        e3.addComponent(
-            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
-        e3.setPosition(pos);
-        this._entityManager.addEntity(e3);
-        e3.setActive(false);
+        // pos = new THREE.Vector3(
+        //     -60,
+        //     3,
+        //     25
+        // );
+        // const e3 = new entity.Entity();
+        // e3.addComponent(new gltf.StaticModelComponent({
+        //     scene: this._scene,
+        //     resourcePath: './model/gorilla/',
+        //     resourceName: 'scene.gltf',
+        //     rotation: [0, 2, 0],
+        //     scale: 0.028,
+        //     emissive: new THREE.Color(0x000000),
+        //     specular: new THREE.Color(0x000000),
+        //     receiveShadow: true,
+        //     castShadow: true,
+        // }) 
+        // );
+        // e3.addComponent(
+        //     new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        // e3.setPosition(pos);
+        // this._entityManager.addEntity(e3);
+        // e3.setActive(false);
 
         pos = new THREE.Vector3(
             -40,
@@ -697,8 +772,8 @@ class Main {
     }
 
     loadDonkey(){
-        const pos = new THREE.Vector3(
-            -20,
+        let pos = new THREE.Vector3(
+            -50,
             0,
             130
         );
@@ -720,6 +795,106 @@ class Main {
         e.setPosition(pos);
         this._entityManager.addEntity(e);
         e.setActive(false);
+
+        pos = new THREE.Vector3(
+            -40,
+            0,
+            110
+        );
+        const e5 = new entity.Entity();
+        e5.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/fence_wood/',
+            resourceName: 'scene.gltf',
+            scale: 5,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+            rotation: [0, -0.38, 0],
+
+        }) 
+        );
+        e5.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e5.setPosition(pos);
+        this._entityManager.addEntity(e5);
+        e5.setActive(false);
+
+        pos = new THREE.Vector3(
+            -40,
+            0,
+            130
+        );
+        const e4 = new entity.Entity();
+        e4.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/fence_wood/',
+            resourceName: 'scene.gltf',
+            scale: 5,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+            rotation: [0, -0.38, 0],
+
+        }) 
+        );
+        e4.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e4.setPosition(pos);
+        this._entityManager.addEntity(e4);
+        e4.setActive(false);
+
+        pos = new THREE.Vector3(
+            -40,
+            0,
+            150
+        );
+        const e3 = new entity.Entity();
+        e3.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/fence_wood/',
+            resourceName: 'scene.gltf',
+            scale: 5,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+            rotation: [0, -0.38, 0],
+
+        }) 
+        );
+        e3.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e3.setPosition(pos);
+        this._entityManager.addEntity(e3);
+        e3.setActive(false);
+
+        pos = new THREE.Vector3(
+            -55,
+            0,
+            170
+        );
+        const e2 = new entity.Entity();
+        e2.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/tembok2/',
+            resourceName: 'scene.gltf',
+            scale: 0.2,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+            rotation: [0, 0, 0],
+
+        }) 
+        );
+        e2.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e2.setPosition(pos);
+        this._entityManager.addEntity(e2);
+        e2.setActive(false);
     }
 
     loadBear(){
@@ -902,6 +1077,32 @@ class Main {
         e2.setPosition(pos);
         this._entityManager.addEntity(e2);
         e2.setActive(false);
+
+        //tembokkiri 2
+        pos = new THREE.Vector3(
+            -108,
+            0,
+            200
+        );
+        const e3 = new entity.Entity();
+        e3.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/tembok4/',
+            resourceName: 'scene.gltf',
+            scale: 14,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+            rotation: [0, 3.14/2, 0],
+
+        }) 
+        );
+        e3.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e3.setPosition(pos);
+        this._entityManager.addEntity(e3);
+        e3.setActive(false);
     }
 
     addPlayerCamera(){
