@@ -135,20 +135,20 @@ class Main {
             [[-1000, -1000], [1000, 1000]], [100, 100]);
         this._npcFactory = new npc_factory();
         this.loadPlayer();
-        this.loadDeer();
+        // this.loadDeer();
         this.loadGate();
         this.loadTembokKiri();
-        this.loadElephant();
-        this.loadArmadillo();
-        this.loadGiraffe();
-        this.loadTiger();
-        this.loadTortoise();
-        this.loadHorse();
+        // this.loadElephant();
+        // this.loadArmadillo();
+        // this.loadGiraffe();
+        // this.loadTiger();
+        // this.loadTortoise();
+        // this.loadHorse();
         this.loadGorilla();
-        this.loadDonkey();
-        this.loadBear();
-        this.loadBabyGiraffe();
-        this.loadClouds();
+        // this.loadDonkey();
+        // this.loadBear();
+        // this.loadBabyGiraffe();
+        // this.loadClouds();
         this.loadSky();
         this._previousRAF = null;
         this.requestAnimation();
@@ -575,9 +575,9 @@ class Main {
 
     loadGorilla(){
         let pos = new THREE.Vector3(
-            70,
+            -55,
             2.7,
-            120
+            35
         );
         const e1 = new entity.Entity();
         e1.addComponent(new gltf.StaticModelComponent({

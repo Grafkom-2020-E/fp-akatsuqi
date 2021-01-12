@@ -1,0 +1,565 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 32048,
+      "max": [
+        6.8052682876586914,
+        9.2206220626831055,
+        16.662372589111328
+      ],
+      "min": [
+        -7.643587589263916,
+        -7.9936380386352539,
+        2.2867765426635742
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 384576,
+      "componentType": 5126,
+      "count": 32048,
+      "max": [
+        0.99997395277023315,
+        0.99966955184936523,
+        0.99998527765274048
+      ],
+      "min": [
+        -0.99909263849258423,
+        -0.99973350763320923,
+        -0.99944710731506348
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 32048,
+      "max": [
+        0.99999904632568359,
+        0.99998408555984497,
+        0.99998205900192261,
+        1
+      ],
+      "min": [
+        -0.99999958276748657,
+        -0.99959361553192139,
+        -0.99998396635055542,
+        -1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 32048,
+      "max": [
+        0.80634260177612305,
+        0.94688630104064941
+      ],
+      "min": [
+        0.14878377318382263,
+        0.04927777498960495
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 48072,
+      "max": [
+        32047
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 769152,
+      "componentType": 5126,
+      "count": 12328,
+      "max": [
+        6.7337121963500977,
+        9.0978860855102539,
+        16.602733612060547
+      ],
+      "min": [
+        -7.5651578903198242,
+        -7.9498910903930664,
+        2.3257131576538086
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 917088,
+      "componentType": 5126,
+      "count": 12328,
+      "max": [
+        0.98619455099105835,
+        0.99973362684249878,
+        0.71921032667160034
+      ],
+      "min": [
+        -0.87263518571853638,
+        -0.99894446134567261,
+        -0.99973678588867188
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 512768,
+      "componentType": 5126,
+      "count": 12328,
+      "max": [
+        0.9997020959854126,
+        0.88253247737884521,
+        0.97984534502029419,
+        -1
+      ],
+      "min": [
+        -0.99999076128005981,
+        -0.99993890523910522,
+        -0.94503259658813477,
+        -1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 256384,
+      "componentType": 5126,
+      "count": 12328,
+      "max": [
+        0.80833214521408081,
+        0.94761025905609131
+      ],
+      "min": [
+        0.14744578301906586,
+        0.04927777498960495
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 192288,
+      "componentType": 5125,
+      "count": 18492,
+      "max": [
+        12327
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 1065024,
+      "componentType": 5126,
+      "count": 1920,
+      "max": [
+        3.2611732482910156,
+        6.5894746780395508,
+        15.254611968994141
+      ],
+      "min": [
+        -4.0827150344848633,
+        -7.1753683090209961,
+        -0.61539363861083984
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 1088064,
+      "componentType": 5126,
+      "count": 1920,
+      "max": [
+        0.98731720447540283,
+        0.99776232242584229,
+        0.97883927822113037
+      ],
+      "min": [
+        -0.97474020719528198,
+        -0.99809467792510986,
+        -0.95560407638549805
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 710016,
+      "componentType": 5126,
+      "count": 1920,
+      "max": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "min": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 355008,
+      "componentType": 5126,
+      "count": 1920,
+      "max": [
+        0,
+        0
+      ],
+      "min": [
+        0,
+        0
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 266256,
+      "componentType": 5125,
+      "count": 11280,
+      "max": [
+        1919
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "sligocreatures (https://sketchfab.com/sligocreatures)",
+      "license": "CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)",
+      "source": "https://sketchfab.com/3d-models/monstera-tree-6d219fec989947698609f1b6945e009c",
+      "title": "Monstera Tree"
+    },
+    "generator": "Sketchfab-6.44.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 311376,
+      "byteOffset": 0,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 370368,
+      "byteOffset": 311376,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1111104,
+      "byteOffset": 681744,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 740736,
+      "byteOffset": 1792848,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 2533584,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/Monstera_Leaf_baseColor.png"
+    },
+    {
+      "uri": "textures/Monstera_Leaf_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Monstera_Leaf_normal.png"
+    },
+    {
+      "uri": "textures/inside_monstera_baseColor.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "Monstera_Leaf",
+      "normalTexture": {
+        "index": 2,
+        "scale": 1,
+        "texCoord": 0
+      },
+      "occlusionTexture": {
+        "index": 1,
+        "strength": 1,
+        "texCoord": 0
+      },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorTexture": {
+          "index": 0,
+          "texCoord": 0
+        },
+        "metallicFactor": 0.73951981707317072,
+        "metallicRoughnessTexture": {
+          "index": 1,
+          "texCoord": 0
+        },
+        "roughnessFactor": 1
+      }
+    },
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        1,
+        1,
+        1
+      ],
+      "emissiveTexture": {
+        "index": 3,
+        "texCoord": 0
+      },
+      "name": "inside_monstera",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorTexture": {
+          "index": 3,
+          "texCoord": 0
+        },
+        "metallicFactor": 0,
+        "roughnessFactor": 0.95770514946237739
+      }
+    },
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "stem",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.027244976476075444,
+          0.11106511231140416,
+          0.016312862141770555,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.95770514946237739
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "6L.004_Monstera Leaf_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "6L.004_inside monstera_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 6,
+            "POSITION": 5,
+            "TANGENT": 7,
+            "TEXCOORD_0": 8
+          },
+          "indices": 9,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "6L.004_stem_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 11,
+            "POSITION": 10,
+            "TANGENT": 12,
+            "TEXCOORD_0": 13
+          },
+          "indices": 14,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "RootNode (gltf orientation matrix)",
+      "rotation": [
+        -0.70710678118654746,
+        -0,
+        -0,
+        0.70710678118654757
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "RootNode (model correction matrix)"
+    },
+    {
+      "children": [
+        3
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "0fb3629ffccd488d89c2ee582c15baf1.fbx"
+    },
+    {
+      "children": [
+        4
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        5,
+        6,
+        7
+      ],
+      "matrix": [
+        -13.871993154350861,
+        -2.1412406336272739e-15,
+        -35.992452523931284,
+        0,
+        -35.992452523929856,
+        -1.0882645010761446e-05,
+        13.871993154350301,
+        0,
+        -1.0154549498108045e-05,
+        38.573162078855894,
+        3.9137049856829611e-06,
+        0,
+        986.4454345703125,
+        20.387340545654297,
+        -157.75253295898438,
+        1
+      ],
+      "name": "6L.004"
+    },
+    {
+      "mesh": 0,
+      "name": "6L.004_Monstera Leaf_0"
+    },
+    {
+      "mesh": 1,
+      "name": "6L.004_inside monstera_0"
+    },
+    {
+      "mesh": 2,
+      "name": "6L.004_stem_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "OSG_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    },
+    {
+      "sampler": 0,
+      "source": 3
+    }
+  ]
+}
+
