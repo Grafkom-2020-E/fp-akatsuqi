@@ -1157,7 +1157,7 @@ class Main {
 
     loadTembokKanan(){
         let pos = new THREE.Vector3(
-            -108,
+            -148,
             0,
             105
         );
@@ -1183,7 +1183,7 @@ class Main {
 
         //tembokkiri 2
         pos = new THREE.Vector3(
-            -108,
+            -148,
             0,
             200
         );
@@ -1210,7 +1210,7 @@ class Main {
 
     loadTembokKiri(){
         let pos = new THREE.Vector3(
-            20,
+            60,
             0,
             105
         );
@@ -1236,7 +1236,7 @@ class Main {
 
         //tembokkiri 2
         pos = new THREE.Vector3(
-            20,
+            60,
             0,
             200
         );
