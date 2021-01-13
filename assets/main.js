@@ -148,7 +148,7 @@ class Main {
         this.loadGorilla();
         // this.loadDonkey();
         this.loadBear();
-        this.loadBabyGiraffe();
+        // this.loadBabyGiraffe();
         this.loadClouds();
         this.loadSky();
         this._previousRAF = null;
@@ -349,7 +349,7 @@ class Main {
 
     loadElephant(){
         let pos = new THREE.Vector3(
-            20-40,
+            -60,
             0,
             280
         );
@@ -359,7 +359,7 @@ class Main {
             resourcePath: './model/elephant/',
             resourceName: 'scene.gltf',
             scale: 0.04,
-            rotation: [0, 3.5, 0],
+            rotation: [0, 3, 0],
             emissive: new THREE.Color(0x000000),
             specular: new THREE.Color(0x000000),
             receiveShadow: true,
@@ -519,8 +519,8 @@ class Main {
     }
 
     loadGiraffe(){
-        const pos = new THREE.Vector3(
-            90,
+        let pos = new THREE.Vector3(
+            40,
             0,
             250
         );
@@ -542,16 +542,15 @@ class Main {
         e.setPosition(pos);
         this._entityManager.addEntity(e);
         e.setActive(false);
-    }
 
-    loadBabyGiraffe(){
-        const pos = new THREE.Vector3(
-            95,
+        //BABY JERAPAH
+        pos = new THREE.Vector3(
+            45,
             0,
             230
         );
-        const e = new entity.Entity();
-        e.addComponent(new gltf.StaticModelComponent({
+        const e2 = new entity.Entity();
+        e2.addComponent(new gltf.StaticModelComponent({
             scene: this._scene,
             resourcePath: './model/girafe/',
             resourceName: 'scene.gltf',
@@ -563,11 +562,11 @@ class Main {
             castShadow: true,
         }) 
         );
-        e.addComponent(
+        e2.addComponent(
             new spatial_grid_controller.SpatialGridController({grid: this._grid}));
-        e.setPosition(pos);
-        this._entityManager.addEntity(e);
-        e.setActive(false);
+        e2.setPosition(pos);
+        this._entityManager.addEntity(e2);
+        e2.setActive(false);
     }
 
     loadTiger(){
