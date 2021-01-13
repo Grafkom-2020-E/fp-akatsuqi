@@ -157,7 +157,7 @@ class Main {
 
     loadDeer(){
         let pos = new THREE.Vector3(
-            30,
+            30+40,
             0,
             25
         );
@@ -179,7 +179,7 @@ class Main {
         e6.setActive(false);
 
         pos = new THREE.Vector3(
-            40,
+            40+40,
             0,
             15
         );
@@ -300,7 +300,7 @@ class Main {
 
     loadElephant(){
         let pos = new THREE.Vector3(
-            20,
+            20-40,
             0,
             280
         );
@@ -420,7 +420,7 @@ class Main {
 
     loadArmadillo(){
         const pos = new THREE.Vector3(
-            60,
+            60+40,
             1,
             75
         );
@@ -596,31 +596,6 @@ class Main {
         e.setPosition(pos);
         this._entityManager.addEntity(e);
         e.setActive(false);
-
-        pos = new THREE.Vector3(
-            -55,
-            0,
-            108.5
-        );
-        const e5 = new entity.Entity();
-        e5.addComponent(new gltf.StaticModelComponent({
-            scene: this._scene,
-            resourcePath: './model/tembok2/',
-            resourceName: 'scene.gltf',
-            scale: 0.2,
-            emissive: new THREE.Color(0x000000),
-            specular: new THREE.Color(0x000000),
-            receiveShadow: true,
-            castShadow: true,
-            rotation: [0, 0, 0],
-
-        }) 
-        );
-        e5.addComponent(
-            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
-        e5.setPosition(pos);
-        this._entityManager.addEntity(e5);
-        e5.setActive(false);
     }
 
     loadHorse(){
@@ -651,7 +626,7 @@ class Main {
 
     loadGorilla(){
         let pos = new THREE.Vector3(
-            -55,
+            -55-40,
             2.7,
             35
         );
@@ -723,7 +698,7 @@ class Main {
         // e3.setActive(false);
 
         pos = new THREE.Vector3(
-            -40,
+            -40-40,
             0,
             110
         );
@@ -747,7 +722,7 @@ class Main {
         e4.setActive(false);
 
         pos = new THREE.Vector3(
-            -55,
+            -55-40,
             0,
             55
         );
@@ -774,7 +749,7 @@ class Main {
 
     loadDonkey(){
         let pos = new THREE.Vector3(
-            -50,
+            -50-40,
             0,
             130
         );
@@ -798,7 +773,7 @@ class Main {
         e.setActive(false);
 
         pos = new THREE.Vector3(
-            -40,
+            -40-40,
             0,
             110
         );
@@ -823,7 +798,7 @@ class Main {
         e5.setActive(false);
 
         pos = new THREE.Vector3(
-            -40,
+            -40-40,
             0,
             130
         );
@@ -848,7 +823,7 @@ class Main {
         e4.setActive(false);
 
         pos = new THREE.Vector3(
-            -40,
+            -40-40,
             0,
             150
         );
@@ -873,7 +848,7 @@ class Main {
         e3.setActive(false);
 
         pos = new THREE.Vector3(
-            -55,
+            -55-40,
             0,
             170
         );
@@ -899,8 +874,8 @@ class Main {
     }
 
     loadBear(){
-        const pos = new THREE.Vector3(
-            -50,
+        let pos = new THREE.Vector3(
+            -50-40,
             0,
             80
         );
@@ -922,6 +897,31 @@ class Main {
         e.setPosition(pos);
         this._entityManager.addEntity(e);
         e.setActive(false);
+
+        pos = new THREE.Vector3(
+            -55-40,
+            0,
+            108.5
+        );
+        const e5 = new entity.Entity();
+        e5.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/tembok2/',
+            resourceName: 'scene.gltf',
+            scale: 0.2,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+            rotation: [0, 0, 0],
+
+        }) 
+        );
+        e5.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e5.setPosition(pos);
+        this._entityManager.addEntity(e5);
+        e5.setActive(false);
     }
 
     loadGate(){
