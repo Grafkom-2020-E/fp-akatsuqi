@@ -1,0 +1,11 @@
+Model Information:
+* title:	tiger howl v04
+* source:	https://sketchfab.com/3d-models/tiger-howl-v04-ca123df978a04daa860c0d8e9d3511d1
+* author:	Unity  (shehab house) (https://sketchfab.com/shahabahmed)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "tiger howl v04" (https://sketchfab.com/3d-models/tiger-howl-v04-ca123df978a04daa860c0d8e9d3511d1) by Unity  (shehab house) (https://sketchfab.com/shahabahmed) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
