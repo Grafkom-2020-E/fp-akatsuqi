@@ -138,6 +138,7 @@ class Main {
         this.loadDeer();
         this.loadGate();
         this.loadTembokKiri();
+        this.loadTembokKanan();
         this.loadElephant();
         this.loadArmadillo();
         this.loadGiraffe();
@@ -201,100 +202,100 @@ class Main {
         this._entityManager.addEntity(e7);
         e7.setActive(false);
 
-        pos = new THREE.Vector3(
-            20, 0, 10
-        );        
-        const grid = this._grid;
-        let gltf_comp = {
-            scene: this._scene,
-            resourcePath: './model/fence_wood/',
-            resourceName: 'scene.gltf',
-            scale: 5,
-            emissive: new THREE.Color(0x000000),
-            specular: new THREE.Color(0x000000),
-            receiveShadow: true,
-            castShadow: true,
-        }
-        const e = this._npcFactory.newNPC({grid, pos, gltf_comp});
-        this._entityManager.addEntity(e);
-        e.setActive(false);
-        pos = new THREE.Vector3(
-            28, 0, 31
-        );
-        const e1 = this._npcFactory.newNPC({grid, gltf_comp, pos});
-        this._entityManager.addEntity(e1);
-        e1.setActive(false);
-        pos = new THREE.Vector3(
-            36, 0, 52
-        );
-        gltf_comp = {
-            scene: this._scene,
-            resourcePath: './model/fence_wood/',
-            resourceName: 'scene.gltf',
-            scale: 5,
-            rotation: [0, 0, 0],
-            emissive: new THREE.Color(0x000000),
-            specular: new THREE.Color(0x000000),
-            receiveShadow: true,
-            castShadow: true,
-        }
-        const e2 = this._npcFactory.newNPC({grid, gltf_comp, pos});        
-        this._entityManager.addEntity(e2);
-        e2.setActive(false);
+        // pos = new THREE.Vector3(
+        //     20, 0, 10
+        // );        
+        // const grid = this._grid;
+        // let gltf_comp = {
+        //     scene: this._scene,
+        //     resourcePath: './model/fence_wood/',
+        //     resourceName: 'scene.gltf',
+        //     scale: 5,
+        //     emissive: new THREE.Color(0x000000),
+        //     specular: new THREE.Color(0x000000),
+        //     receiveShadow: true,
+        //     castShadow: true,
+        // }
+        // const e = this._npcFactory.newNPC({grid, pos, gltf_comp});
+        // this._entityManager.addEntity(e);
+        // e.setActive(false);
+        // pos = new THREE.Vector3(
+        //     28, 0, 31
+        // );
+        // const e1 = this._npcFactory.newNPC({grid, gltf_comp, pos});
+        // this._entityManager.addEntity(e1);
+        // e1.setActive(false);
+        // pos = new THREE.Vector3(
+        //     36, 0, 52
+        // );
+        // gltf_comp = {
+        //     scene: this._scene,
+        //     resourcePath: './model/fence_wood/',
+        //     resourceName: 'scene.gltf',
+        //     scale: 5,
+        //     rotation: [0, 0, 0],
+        //     emissive: new THREE.Color(0x000000),
+        //     specular: new THREE.Color(0x000000),
+        //     receiveShadow: true,
+        //     castShadow: true,
+        // }
+        // const e2 = this._npcFactory.newNPC({grid, gltf_comp, pos});        
+        // this._entityManager.addEntity(e2);
+        // e2.setActive(false);
 
-        pos = new THREE.Vector3(
-            20, 0, 10
-        );
-        gltf_comp = {
-            scene: this._scene,
-            resourcePath: './model/fence_wood/',
-            resourceName: 'scene.gltf',
-            scale: 5,
-            rotation: [0, 1.5, 0],
-            emissive: new THREE.Color(0x000000),
-            specular: new THREE.Color(0x000000),
-            receiveShadow: true,
-            castShadow: true,
-        }
-        const e3 = this._npcFactory.newNPC({grid, gltf_comp, pos});        
-        this._entityManager.addEntity(e3);
-        e3.setActive(false);
+        // pos = new THREE.Vector3(
+        //     20, 0, 10
+        // );
+        // gltf_comp = {
+        //     scene: this._scene,
+        //     resourcePath: './model/fence_wood/',
+        //     resourceName: 'scene.gltf',
+        //     scale: 5,
+        //     rotation: [0, 1.5, 0],
+        //     emissive: new THREE.Color(0x000000),
+        //     specular: new THREE.Color(0x000000),
+        //     receiveShadow: true,
+        //     castShadow: true,
+        // }
+        // const e3 = this._npcFactory.newNPC({grid, gltf_comp, pos});        
+        // this._entityManager.addEntity(e3);
+        // e3.setActive(false);
 
-        pos = new THREE.Vector3(
-            40, 0, 2
-        );
-        gltf_comp = {
-            scene: this._scene,
-            resourcePath: './model/fence_wood/',
-            resourceName: 'scene.gltf',
-            scale: 5,
-            // rotation: [0, 1, 0],
-            emissive: new THREE.Color(0x000000),
-            specular: new THREE.Color(0x000000),
-            receiveShadow: true,
-            castShadow: true,
-        }
-        const e4 = this._npcFactory.newNPC({grid, gltf_comp, pos});        
-        this._entityManager.addEntity(e4);
-        e4.setActive(false);
+        // pos = new THREE.Vector3(
+        //     40, 0, 2
+        // );
+        // gltf_comp = {
+        //     scene: this._scene,
+        //     resourcePath: './model/fence_wood/',
+        //     resourceName: 'scene.gltf',
+        //     scale: 5,
+        //     // rotation: [0, 1, 0],
+        //     emissive: new THREE.Color(0x000000),
+        //     specular: new THREE.Color(0x000000),
+        //     receiveShadow: true,
+        //     castShadow: true,
+        // }
+        // const e4 = this._npcFactory.newNPC({grid, gltf_comp, pos});        
+        // this._entityManager.addEntity(e4);
+        // e4.setActive(false);
 
-        pos = new THREE.Vector3(
-            50, 0, 25
-        );
-        gltf_comp = {
-            scene: this._scene,
-            resourcePath: './model/fence_wood/',
-            resourceName: 'scene.gltf',
-            scale: 5,
-            // rotation: [0, 1, 0],
-            emissive: new THREE.Color(0x000000),
-            specular: new THREE.Color(0x000000),
-            receiveShadow: true,
-            castShadow: true,
-        }
-        const e5 = this._npcFactory.newNPC({grid, gltf_comp, pos});        
-        this._entityManager.addEntity(e5);
-        e5.setActive(false);
+        // pos = new THREE.Vector3(
+        //     50, 0, 25
+        // );
+        // gltf_comp = {
+        //     scene: this._scene,
+        //     resourcePath: './model/fence_wood/',
+        //     resourceName: 'scene.gltf',
+        //     scale: 5,
+        //     // rotation: [0, 1, 0],
+        //     emissive: new THREE.Color(0x000000),
+        //     specular: new THREE.Color(0x000000),
+        //     receiveShadow: true,
+        //     castShadow: true,
+        // }
+        // const e5 = this._npcFactory.newNPC({grid, gltf_comp, pos});        
+        // this._entityManager.addEntity(e5);
+        // e5.setActive(false);
     }
 
     loadElephant(){
@@ -1081,6 +1082,59 @@ class Main {
         //tembokkiri 2
         pos = new THREE.Vector3(
             -108,
+            0,
+            200
+        );
+        const e3 = new entity.Entity();
+        e3.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/tembok4/',
+            resourceName: 'scene.gltf',
+            scale: 14,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+            rotation: [0, 3.14/2, 0],
+
+        }) 
+        );
+        e3.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e3.setPosition(pos);
+        this._entityManager.addEntity(e3);
+        e3.setActive(false);
+    }
+
+    loadTembokKanan(){
+        let pos = new THREE.Vector3(
+            20,
+            0,
+            105
+        );
+        const e2 = new entity.Entity();
+        e2.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/tembok4/',
+            resourceName: 'scene.gltf',
+            scale: 14,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+            rotation: [0, 3.14/2, 0],
+
+        }) 
+        );
+        e2.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e2.setPosition(pos);
+        this._entityManager.addEntity(e2);
+        e2.setActive(false);
+
+        //tembokkiri 2
+        pos = new THREE.Vector3(
+            20,
             0,
             200
         );
