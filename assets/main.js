@@ -135,20 +135,20 @@ class Main {
             [[-1000, -1000], [1000, 1000]], [100, 100]);
         this._npcFactory = new npc_factory();
         this.loadPlayer();
-        // this.loadDeer();
-        // this.loadGate();
+        this.loadDeer();
+        this.loadGate();
         this.loadTembokKiri();
-        // this.loadElephant();
-        // this.loadArmadillo();
-        // this.loadGiraffe();
+        this.loadElephant();
+        this.loadArmadillo();
+        this.loadGiraffe();
         this.loadTiger();
-        // this.loadTortoise();
-        // this.loadHorse();
-        // this.loadGorilla();
-        // this.loadDonkey();
-        // this.loadBear();?
-        // this.loadBabyGiraffe();
-        // this.loadClouds();
+        this.loadTortoise();
+        this.loadHorse();
+        this.loadGorilla();
+        this.loadDonkey();
+        this.loadBear();
+        this.loadBabyGiraffe();
+        this.loadClouds();
         this.loadSky();
         this._previousRAF = null;
         this.requestAnimation();
@@ -659,7 +659,7 @@ class Main {
             scene: this._scene,
             resourcePath: './model/gorilla/',
             resourceName: 'scene.gltf',
-            rotation: [0, -1.5, 0],
+            rotation: [0, 1.5, 0],
             scale: 0.025,
             emissive: new THREE.Color(0x000000),
             specular: new THREE.Color(0x000000),
@@ -748,7 +748,7 @@ class Main {
         pos = new THREE.Vector3(
             -55,
             0,
-            72.5
+            55
         );
         const e5 = new entity.Entity();
         e5.addComponent(new gltf.StaticModelComponent({
@@ -899,16 +899,16 @@ class Main {
 
     loadBear(){
         const pos = new THREE.Vector3(
-            90,
+            -50,
             0,
-            190
+            80
         );
         const e = new entity.Entity();
         e.addComponent(new gltf.StaticModelComponent({
             scene: this._scene,
             resourcePath: './model/bear/',
             resourceName: 'scene.gltf',
-            rotation: [0, -1.5, 0],
+            rotation: [0, 1.5, 0],
             scale: 0.09,
             emissive: new THREE.Color(0x000000),
             specular: new THREE.Color(0x000000),
