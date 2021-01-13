@@ -43,7 +43,7 @@ class Main {
         this.initialize();
     }
     initLoading(){
-        this.loadingDuration = 5000;
+        this.loadingDuration = 3000;
         this.loadingBarElement = null;
         this.loadingTime = 0;
         this.loadingBarElement = document.getElementById('lg-loading-bar');
@@ -925,6 +925,7 @@ class Main {
     }
 
     loadGate(){
+        //tembok kanan 1
         let pos = new THREE.Vector3(
             -10,
             28,
@@ -1000,7 +1001,58 @@ class Main {
         this._entityManager.addEntity(e3);
         e3.setActive(false);
 
+        //tembok kanan 2
+        pos = new THREE.Vector3(
+            -95,
+            0,
+            0
+        );
+        const e6 = new entity.Entity();
+        e6.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/tembok2/',
+            resourceName: 'scene.gltf',
+            scale: 0.2,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+            rotation: [0, 0, 0],
 
+        }) 
+        );
+        e6.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e6.setPosition(pos);
+        this._entityManager.addEntity(e6);
+        e6.setActive(false);
+
+        pos = new THREE.Vector3(
+            -95,
+            15,
+            0
+        );
+        const e7 = new entity.Entity();
+        e7.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/tembok2/',
+            resourceName: 'scene.gltf',
+            scale: 0.2,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+            rotation: [0, 3.14, 0],
+
+        }) 
+        );
+        e7.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e7.setPosition(pos);
+        this._entityManager.addEntity(e7);
+        e7.setActive(false);
+        
+        //tembok kiri 1
         pos = new THREE.Vector3(
             35,
             0,
@@ -1051,9 +1103,59 @@ class Main {
         this._entityManager.addEntity(e5);
         e5.setActive(false);
         
+        //tembok kiri 2
+        pos = new THREE.Vector3(
+            75,
+            0,
+            0
+        );
+        const e8 = new entity.Entity();
+        e8.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/tembok2/',
+            resourceName: 'scene.gltf',
+            scale: 0.2,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+            rotation: [0, 0, 0],
+
+        }) 
+        );
+        e8.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e8.setPosition(pos);
+        this._entityManager.addEntity(e8);
+        e8.setActive(false);
+
+        pos = new THREE.Vector3(
+            75,
+            15,
+            0
+        );
+        const e9 = new entity.Entity();
+        e9.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/tembok2/',
+            resourceName: 'scene.gltf',
+            scale: 0.2,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+            rotation: [0, 3.14, 0],
+
+        }) 
+        );
+        e9.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e9.setPosition(pos);
+        this._entityManager.addEntity(e9);
+        e9.setActive(false);
     }
 
-    loadTembokKiri(){
+    loadTembokKanan(){
         let pos = new THREE.Vector3(
             -108,
             0,
@@ -1106,7 +1208,7 @@ class Main {
         e3.setActive(false);
     }
 
-    loadTembokKanan(){
+    loadTembokKiri(){
         let pos = new THREE.Vector3(
             20,
             0,
