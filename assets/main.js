@@ -545,6 +545,31 @@ class Main {
         this._entityManager.addEntity(e4);
         e4.setActive(false);
 
+        pos = new THREE.Vector3(
+            -55-40,
+            0,
+            215,5
+        );
+        const e5 = new entity.Entity();
+        e5.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/tembok2/',
+            resourceName: 'scene.gltf',
+            scale: 0.2,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+            rotation: [0, 0, 0],
+
+        }) 
+        );
+        e5.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e5.setPosition(pos);
+        this._entityManager.addEntity(e5);
+        e5.setActive(false);
+
         // pos = new THREE.Vector3(
         //     -53,
         //     30,
@@ -748,7 +773,7 @@ class Main {
         pos = new THREE.Vector3(
             -55-40,
             0,
-            55
+            72
         );
         const e5 = new entity.Entity();
         e5.addComponent(new gltf.StaticModelComponent({
@@ -901,7 +926,7 @@ class Main {
         let pos = new THREE.Vector3(
             -50-40,
             0,
-            80
+            100
         );
         const e = new entity.Entity();
         e.addComponent(new gltf.StaticModelComponent({
@@ -925,7 +950,7 @@ class Main {
         pos = new THREE.Vector3(
             -55-40,
             0,
-            108.5
+            143
         );
         const e5 = new entity.Entity();
         e5.addComponent(new gltf.StaticModelComponent({
