@@ -468,10 +468,10 @@ class Main {
     }
 
     loadArmadillo(){
-        const pos = new THREE.Vector3(
-            60+40,
+        let pos = new THREE.Vector3(
+            60+30,
             1,
-            75
+            90
         );
         const e = new entity.Entity();
         e.addComponent(new gltf.StaticModelComponent({
@@ -491,6 +491,126 @@ class Main {
         e.setPosition(pos);
         this._entityManager.addEntity(e);
         e.setActive(false);
+
+        pos = new THREE.Vector3(
+            45,
+            0,
+            60
+        );
+        const e2 = new entity.Entity();
+        e2.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/fence_wood/',
+            resourceName: 'scene.gltf',
+            rotation: [0, -0.4, 0],
+            scale: 5,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }) 
+        );
+        e2.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e2.setPosition(pos);
+        this._entityManager.addEntity(e2);
+        e2.setActive(false);
+
+        pos = new THREE.Vector3(
+            45,
+            0,
+            80
+        );
+        const e3 = new entity.Entity();
+        e3.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/fence_wood/',
+            resourceName: 'scene.gltf',
+            rotation: [0, -0.4, 0],
+            scale: 5,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }) 
+        );
+        e3.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e3.setPosition(pos);
+        this._entityManager.addEntity(e3);
+        e3.setActive(false);
+
+        pos = new THREE.Vector3(
+            65,
+            0,
+            100
+        );
+        const e4 = new entity.Entity();
+        e4.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/fence_wood/',
+            resourceName: 'scene.gltf',
+            rotation: [0, 1.2, 0],
+            scale: 5,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }) 
+        );
+        e4.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e4.setPosition(pos);
+        this._entityManager.addEntity(e4);
+        e4.setActive(false);
+
+        pos = new THREE.Vector3(
+            85,
+            0,
+            100
+        );
+        const e5 = new entity.Entity();
+        e5.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/fence_wood/',
+            resourceName: 'scene.gltf',
+            rotation: [0, 1.2, 0],
+            scale: 5,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }) 
+        );
+        e5.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e5.setPosition(pos);
+        this._entityManager.addEntity(e5);
+        e5.setActive(false);
+
+        pos = new THREE.Vector3(
+            45,
+            0,
+            100
+        );
+        const e6 = new entity.Entity();
+        e6.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/fence_wood/',
+            resourceName: 'scene.gltf',
+            rotation: [0, 1.2, 0],
+            scale: 5,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }) 
+        );
+        e6.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e6.setPosition(pos);
+        this._entityManager.addEntity(e6);
+        e6.setActive(false);
     }
 
     loadGiraffe(){
