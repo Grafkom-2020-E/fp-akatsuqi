@@ -159,12 +159,12 @@ class Main {
     }
 
     loadFloor(){
-        let xposisib = 140;
-        let zposisib = 400;
+        let xposisib = 0;
+        let zposisib = 0;
         for(let i = 0; i < 17 ; i ++){
             let pos = new THREE.Vector3(
                 xposisib,
-                -20,
+                -5,
                 zposisib
             );
             const e4 = new entity.Entity();
@@ -172,7 +172,7 @@ class Main {
                 scene: this._scene,
                 resourcePath: './model/stone_floor (1)/',
                 resourceName: 'scene.gltf',
-                scale: 40,
+                scale: 10,
                 emissive: new THREE.Color(0x000000),
                 specular: new THREE.Color(0x000000),
                 receiveShadow: true,
@@ -407,7 +407,7 @@ class Main {
 
         pos = new THREE.Vector3(
             -10,
-            -10,
+            -17,
             250
         );
         const e2 = new entity.Entity();
