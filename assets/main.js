@@ -546,7 +546,7 @@ class Main {
         let pos = new THREE.Vector3(
             40,
             0,
-            250
+            280
         );
         const e = new entity.Entity();
         e.addComponent(new gltf.StaticModelComponent({
@@ -571,7 +571,7 @@ class Main {
         pos = new THREE.Vector3(
             45,
             0,
-            230
+            270
         );
         const e2 = new entity.Entity();
         e2.addComponent(new gltf.StaticModelComponent({
