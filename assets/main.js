@@ -1644,32 +1644,6 @@ class Main {
         e2.setPosition(pos);
         this._entityManager.addEntity(e2);
         e2.setActive(false);
-
-        //tembokkiri 2
-        pos = new THREE.Vector3(
-            -148,
-            0,
-            200
-        );
-        const e3 = new entity.Entity();
-        e3.addComponent(new gltf.StaticModelComponent({
-            scene: this._scene,
-            resourcePath: './model/tembok4/',
-            resourceName: 'scene.gltf',
-            scale: 14,
-            emissive: new THREE.Color(0x000000),
-            specular: new THREE.Color(0x000000),
-            receiveShadow: true,
-            castShadow: true,
-            rotation: [0, 3.14/2, 0],
-
-        }) 
-        );
-        e3.addComponent(
-            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
-        e3.setPosition(pos);
-        this._entityManager.addEntity(e3);
-        e3.setActive(false);
     }
 
     loadTembokKiri(){
@@ -1726,31 +1700,88 @@ class Main {
     }
 
     loadPohonKeliling(){
-        let pos = new THREE.Vector3(
-            0,
-            0,
-            0
-        );
-        const e2 = new entity.Entity();
-        e2.addComponent(new gltf.StaticModelComponent({
-            scene: this._scene,
-            resourcePath: './model/pohon6/',
-            resourceName: 'scene.gltf',
-            scale: 14,
-            emissive: new THREE.Color(0x000000),
-            specular: new THREE.Color(0x000000),
-            receiveShadow: true,
-            castShadow: true,
-            rotation: [0, 3.14, 0],
+        let xposisi = 150;
+        let zposisi = 0;
+        let xposisib = 140;
+        let zposisib = 400;
+        for(let i = 0; i < 17 ; i ++){
+            console.log(Math.random()%60);
+            let pos = new THREE.Vector3(
+                xposisi-=1,
+                0,
+                zposisi+=20
+            );
+            const e2 = new entity.Entity();
+            e2.addComponent(new gltf.StaticModelComponent({
+                scene: this._scene,
+                resourcePath: './model/pohon6/',
+                resourceName: 'scene.gltf',
+                scale: 40,
+                emissive: new THREE.Color(0x000000),
+                specular: new THREE.Color(0x000000),
+                receiveShadow: true,
+                castShadow: true,
+                rotation: [0, 3.14, 0],
 
-        }) 
-        );
-        e2.addComponent(
-            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
-        e2.setPosition(pos);
-        this._entityManager.addEntity(e2);
-        e2.setActive(false);
+            }) 
+            );
+            e2.addComponent(
+                new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+            e2.setPosition(pos);
+            this._entityManager.addEntity(e2);
+            e2.setActive(false);
+
+            pos = new THREE.Vector3(
+                xposisi*-1,
+                0,
+                zposisi
+            );
+            const e3 = new entity.Entity();
+            e3.addComponent(new gltf.StaticModelComponent({
+                scene: this._scene,
+                resourcePath: './model/pohon6/',
+                resourceName: 'scene.gltf',
+                scale: 40,
+                emissive: new THREE.Color(0x000000),
+                specular: new THREE.Color(0x000000),
+                receiveShadow: true,
+                castShadow: true,
+                rotation: [0, 3.14, 0],
+
+            }) 
+            );
+            e3.addComponent(
+                new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+            e3.setPosition(pos);
+            this._entityManager.addEntity(e3);
+            e3.setActive(false);
+
+            pos = new THREE.Vector3(
+                xposisib-=25,
+                0,
+                zposisib
+            );
+            const e4 = new entity.Entity();
+            e4.addComponent(new gltf.StaticModelComponent({
+                scene: this._scene,
+                resourcePath: './model/pohon6/',
+                resourceName: 'scene.gltf',
+                scale: 40,
+                emissive: new THREE.Color(0x000000),
+                specular: new THREE.Color(0x000000),
+                receiveShadow: true,
+                castShadow: true,
+                rotation: [0, 3.14, 0],
+
+            }) 
+            );
+            e4.addComponent(
+                new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+            e4.setPosition(pos);
+            this._entityManager.addEntity(e4);
+            e4.setActive(false);
         }
+    }
 
     addPlayerCamera(){
         const camera = new entity.Entity();
