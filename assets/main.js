@@ -139,6 +139,7 @@ class Main {
         this.loadGate();
         this.loadTembokKiri();
         this.loadTembokKanan();
+        this.loadTembokBelakang();
         this.loadElephant();
         this.loadArmadillo();
         this.loadGiraffe();
@@ -1581,6 +1582,59 @@ class Main {
             receiveShadow: true,
             castShadow: true,
             rotation: [0, 3.14/2, 0],
+
+        }) 
+        );
+        e2.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e2.setPosition(pos);
+        this._entityManager.addEntity(e2);
+        e2.setActive(false);
+
+        //tembokkiri 2
+        pos = new THREE.Vector3(
+            -148,
+            0,
+            200
+        );
+        const e3 = new entity.Entity();
+        e3.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/tembok4/',
+            resourceName: 'scene.gltf',
+            scale: 14,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+            rotation: [0, 3.14/2, 0],
+
+        }) 
+        );
+        e3.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e3.setPosition(pos);
+        this._entityManager.addEntity(e3);
+        e3.setActive(false);
+    }
+
+    loadTembokBelakang(){
+        let pos = new THREE.Vector3(
+            -20,
+            0,
+            350
+        );
+        const e2 = new entity.Entity();
+        e2.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/tembok4/',
+            resourceName: 'scene.gltf',
+            scale: 14,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+            rotation: [0, 3.14, 0],
 
         }) 
         );
