@@ -5,7 +5,8 @@ import {FBXLoader} from 'https://cdn.jsdelivr.net/npm/three@0.118.1/examples/jsm
 import {entity} from './entity.js';
 import {finite_state_machine} from './finite-state-machine.js';
 import {player_state} from './player-state.js';
-
+import {api_manager} from './api.js';
+import { ui_controller } from './ui-controller.js';
 
 export const player_entity = (() => {
 
@@ -16,7 +17,7 @@ export const player_entity = (() => {
       this.init();
     }
   
-    init() {
+    init() {      
       this.addState('idle', player_state.IdleState);
       this.addState('walk', player_state.WalkState);
     }
@@ -41,6 +42,8 @@ export const player_entity = (() => {
 
     init(params) {
       this._params = params;
+      this.uiController = new ui_controller.UiController();
+      this.apiManager = new api_manager.ApiManager();
       this._decceleration = new THREE.Vector3(-0.0005, -0.0001, -5.0);
       this._acceleration = new THREE.Vector3(1, 0.125, 50.0);
       this._velocity = new THREE.Vector3(0, 0, 0);
@@ -118,21 +121,33 @@ export const player_entity = (() => {
       const nearby = grid.FindNearbyEntities(5)
       const collisions = [];
       // console.log(pos)
+      const apiData = this.apiManager.getData();
+      const collision_exception = ['big_gate', 'floor'];
 
+      const input = this.getComponent('BasicCharacterControllerInput');
       for (let i = 0; i < nearby.length; ++i) {
-        const e = nearby[i].entity;
-        const e_range = e.getRange();
-        const e_type = e.getType();
-        
-        console.log(e._position.x, e._position.z, e.getType())
-        // const d = ((pos.x - e._position.x) ** 2 + (pos.z - e._position.z) ** 2) ** 0.5;
-        // HARDCODED
-        if (e_type != '') {
-          // console.log(e_range)
-          // console.log(pos)
-          if(((pos.x > e_range.batas_bawah[0] && pos.z > e_range.batas_bawah[1]) && (pos.x < e_range.batas_atas[0] && pos.z < e_range.batas_atas[1] )))
-          collisions.push(nearby[i].entity);
+        const e = nearby[i].entity;              
+        console.log(e._position.x,e._position.z)
+        const d = ((pos.x - e._position.x) ** 2 + (pos.z - e._position.z) ** 2) ** 0.5;
+        if (d<7 && !collision_exception.includes(e.getType())) {
+          this.uiController.displayInteraction();
+          const data = apiData.filter( data => data.id === e.getId())[0]
+          if (input._keys.f) {
+            if (this.uiController.isDisplayedAnimalInformation()) {
+              this.uiController.hideAnimalInformation();
+            }else{
+              this.uiController.displayAnimalInformation(data)
+            }
+          }
+          collisions.push(nearby[i].entity)
         }
+        // HARDCODED
+        // if (e_type != '') {
+        //   console.log(e_range)
+        //   console.log(pos)
+        //   if(((pos.x > e_range.batas_bawah[0] && pos.z > e_range.batas_bawah[1]) && (pos.x < e_range.batas_atas[0] && pos.z < e_range.batas_atas[1] )))
+        //   collisions.push(nearby[i].entity);
+        // }
       }
       return collisions;
     }
@@ -230,7 +245,14 @@ export const player_entity = (() => {
 
       controlObject.position.copy(pos);
       this._position.copy(pos);
-  
+      if (input._keys.f) {
+        if (this.uiController.isDisplayedAnimalInformation()) {
+          this.uiController.hideAnimalInformation();
+        }
+      }
+      if (this.uiController.isDisplayInteraction()) {
+        this.uiController.hideInteraction();
+      }
       this._parent.setPosition(this._position);
       this._parent.setQuaternion(this._target.quaternion);
     }

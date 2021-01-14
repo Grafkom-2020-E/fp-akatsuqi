@@ -9,7 +9,6 @@ import { third_person_camera } from './component/third-person-camera.js';
 import { spatial_hash_grid } from './component/spatial-hash-grid.js';
 import { spatial_grid_controller } from './component/spatial-grid-controller.js';
 import { npc_factory } from './component/npc-factory.js';
-import { api_manager } from './component/api.js';
 
 const _VS = `
 varying vec3 vWorldPosition;
@@ -37,18 +36,14 @@ void main() {
 
 class Main {
     constructor(){        
-        this.initMusic();
-        this.loadAPI();
+        this.initMusic();        
         this.initLoading();
         this.initialize();
     }
     initMusic(){
         this.audio = new Audio ('assets/sounds/mainsound.mp3');
         this.audio.play()
-    }
-    loadAPI(){
-        this.api_manager = new api_manager.ApiManager();
-    }
+    }    
     initLoading(){
         this.loadingDuration = 5000;
         this.loadingBarElement = null;
@@ -65,9 +60,7 @@ class Main {
             const bgMain = document.querySelector('.bg-main');
             bgMain.style.display = 'none'
             const container = document.getElementById('container');
-            container.style.display = 'block';
-            const guide = document.getElementById('guide');
-            guide.style.display = 'block';
+            container.style.display = 'block';            
         }
     }
 
@@ -146,6 +139,7 @@ class Main {
             [[-1000, -1000], [1000, 1000]], [100, 100]);
         this._npcFactory = new npc_factory();
         this.loadPlayer();
+        this.loadFloor();
         this.loadDeer();
         this.loadGate();
         this.loadTembokKiri();
@@ -170,13 +164,14 @@ class Main {
     loadFloor(){
         let xposisib = 0;
         let zposisib = 0;
-        for(let i = 0; i < 17 ; i ++){
+        for(let i = 0; i < 1 ; i ++){
             let pos = new THREE.Vector3(
                 xposisib,
-                -5,
+                0,
                 zposisib
             );
             const e4 = new entity.Entity();
+            e4.setType('floor');
             e4.addComponent(new gltf.StaticModelComponent({
                 scene: this._scene,
                 resourcePath: './model/stone_floor (1)/',
@@ -188,8 +183,7 @@ class Main {
                 castShadow: true,
                 rotation: [0, 3.14, 0],
 
-            }) 
-            );
+            }));
             e4.addComponent(
                 new spatial_grid_controller.SpatialGridController({grid: this._grid}));
             e4.setPosition(pos);
@@ -253,6 +247,7 @@ class Main {
         );
         const e = new entity.Entity();
         e.setType('rusa');
+        e.setId('5ffff56abfb6bacaaf78df52');
         e.setRange({
             batas_bawah:[41.55,3.02],
             batas_atas: [42.55, 20.82],
@@ -282,6 +277,7 @@ class Main {
         );
         const e2 = new entity.Entity();
         e2.setType('rusa');
+        e2.setId('5ffff56abfb6bacaaf78df52');
         e2.setRange({
             batas_bawah:[41.55,21.82],
             batas_atas: [42.55, 39.82],
@@ -311,6 +307,7 @@ class Main {
         );
         const e3 = new entity.Entity();
         e3.setType('rusa');
+        e3.setId('5ffff56abfb6bacaaf78df52');
         e3.setRange({
             batas_bawah:[41.55,41.01],
             batas_atas: [42.55, 59.82],
@@ -387,7 +384,6 @@ class Main {
             60
         );
         const e8 = new entity.Entity();
-        e8.setType('rusa');
         e8.addComponent(new gltf.StaticModelComponent({
             scene: this._scene,
             resourcePath: './model/fence_wood/',
@@ -1402,6 +1398,7 @@ class Main {
             0
         );
         const e1 = new entity.Entity();
+        e1.setType('big_gate');
         e1.addComponent(new gltf.StaticModelComponent({
             scene: this._scene,
             resourcePath: './model/gate2/',

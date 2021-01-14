@@ -4,6 +4,7 @@ export const entity = (() => {
 
   class Entity {
     constructor() {
+      this._id = '';
       this._name = null;
       this._components = {};
 
@@ -13,6 +14,14 @@ export const entity = (() => {
       this._parent = null;
       this._type = '';
       this._range= {};
+    }
+
+    setId(id){
+      this._id = id;
+    }
+
+    getId(){
+      return this._id
     }
 
     setType(type){

@@ -4,42 +4,46 @@ export const ui_controller = (() => {
       }
 
       displayAnimalInformation(data){
-        const ui = `
-          <div style="position: absolute; left:30%; top: 25%;">
-                  <div id="info">
-                      <h2>INFO</h2>
-                  </div>
-                  <div class="container" id="container2">
-                      <div class="image">
-                          <img src="${data.image}" alt="" srcset="">
-                      </div>
-                      <div class="animal_info">
-                          <div id="name">
-                              <h3>Name</h3>
-                              <p id="animal_name">${data.name}</p>
-                          </div>
-                          <div id="latin">
-                              <h3>Latin</h3>
-                              <p  id="animal_latin">Description</p>
-                          </div>
-                          <div id="description">
-                              <h3>Description</h3>
-                              <p  id="animal_description">${data.description}</p>
-                          </div>
-                          <div id="food">
-                              <h3>food</h3>
-                              <p  id="animal_food">${data.food}</p>
-                          </div>
-                          <div id="location">
-                              <h3>Location</h3>
-                              <p  id="animal_location">${data.location}</p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              `
-              document.body.innerHTML = ui+=document.body.innerHTML;
+        const ui = document.querySelector('#ui');
+        ui.querySelector('#animal_image').setAttribute('src', data.image);
+        ui.querySelector('#animal_name').innerHTML = data.name
+        ui.querySelector('#animal_description').innerHTML = data.description
+        ui.querySelector('#animal_location').innerHTML = data.location
+        ui.querySelector('#animal_food').innerHTML = data.food
+        ui.querySelector('#animal_latin').innerHTML = data.latin_name
+        ui.style.display = 'block'
       }
+      isDisplayedAnimalInformation(){
+        const ui = document.querySelector('#ui');  
+        if (ui.style.display == 'none') {
+            return false;
+        }
+        return true;
+      }
+      hideAnimalInformation(){
+        const ui = document.querySelector('#ui');
+        ui.style.display = 'none'
+      }
+
+      displayInteraction(){
+        const guide = document.getElementById('guide');
+        guide.style.display = 'block';
+      }
+
+      hideInteraction(){
+        const guide = document.getElementById('guide');
+        guide.style.display = 'none';
+      }
+
+      isDisplayInteraction(){
+        const guide = document.getElementById('guide');
+        if (guide.style.display == 'none') {
+          return false
+        } else {
+          return true
+        }
+      }
+      
   }
 
   return {
