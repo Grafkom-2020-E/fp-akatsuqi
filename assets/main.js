@@ -303,15 +303,15 @@ class Main {
         this._entityManager.addEntity(e2);
         e2.setActive(false);
     
-        // buat jerapah
+        // buat Gajah
         pos = new THREE.Vector3(
-            -10-10,
+            -40,
             0,
             232
         );
         const e3 = new entity.Entity();
-        e3.setType('Jerapah');
-        e3.setId('5ffff95bbfb6bacaaf78df56');
+        e3.setType('Gajah');
+        e3.setId('5ffff1ccbfb6bacaaf78df51');
     
         e3.addComponent(new gltf.StaticModelComponent({
             scene: this._scene,
@@ -330,15 +330,16 @@ class Main {
         this._entityManager.addEntity(e3);
         e3.setActive(false);
     
-        // buat gajah
+        // buat Jerapah
         pos = new THREE.Vector3(
-            10-10,
+            20,
             0,
             255
         );
         const e4 = new entity.Entity();
-        e4.setType('Gajah');
-        e4.setId('5ffff1ccbfb6bacaaf78df51');
+        e4.setType('Jerapah');
+        e4.setId('5ffff95bbfb6bacaaf78df56');
+
     
         e4.addComponent(new gltf.StaticModelComponent({
             scene: this._scene,
@@ -418,8 +419,8 @@ class Main {
             40
         );
         const e9 = new entity.Entity();
-        e8.setType('Gorila');
-        e8.setId('5ffffbb91fc2ecf90c474677');
+        e9.setType('Gorila');
+        e9.setId('5ffffbb91fc2ecf90c474677');
     
         e9.addComponent(new gltf.StaticModelComponent({
             scene: this._scene,

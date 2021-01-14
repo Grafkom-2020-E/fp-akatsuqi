@@ -129,7 +129,7 @@ export const player_entity = (() => {
         const e = nearby[i].entity;              
         console.log(e._position.x,e._position.z)
         const d = ((pos.x - e._position.x) ** 2 + (pos.z - e._position.z) ** 2) ** 0.5;
-        if (d<7 && !collision_exception.includes(e.getType())) {
+        if (d<5 && !collision_exception.includes(e.getType())) {
           this.uiController.displayInteraction();
           const data = apiData.filter( data => data.id === e.getId())[0]
           if (input._keys.f) {
