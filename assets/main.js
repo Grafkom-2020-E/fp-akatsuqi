@@ -43,7 +43,7 @@ class Main {
         this.initialize();
     }
     initLoading(){
-        this.loadingDuration = 3000;
+        this.loadingDuration = 5000;
         this.loadingBarElement = null;
         this.loadingTime = 0;
         this.loadingBarElement = document.getElementById('lg-loading-bar');
@@ -55,6 +55,8 @@ class Main {
         this.loadingBarElement.style.transform = `scaleX(${this.loadingTime/this.loadingDuration})`;
         if (this.loadingTime >= this.loadingDuration){
             this.isLoading = false
+            const bgMain = document.querySelector('.bg-main');
+            bgMain.style.display = 'none'
             const container = document.getElementById('container');
             container.style.display = 'block';
         }
