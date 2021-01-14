@@ -151,12 +151,18 @@ class Main {
         // this.loadText();
         // this.loadFloor();
         // this.loadDonkey();
+        this.myFunction();
         this.loadBear();
         this.loadClouds();
         this.loadSky();
         this._previousRAF = null;
         this.requestAnimation();
     }
+
+    myFunction() {
+        document.getElementById('panel').innerHTML = '<h1 style="color:white"> coba </h1> ';
+        console.log(document.getElementById('panel').value);
+      }
 
     loadFloor(){
         let xposisib = 0;
