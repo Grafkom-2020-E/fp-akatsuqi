@@ -334,7 +334,7 @@ class Main {
         pos = new THREE.Vector3(
             20,
             0,
-            255
+            235
         );
         const e4 = new entity.Entity();
         e4.setType('giraffe');
@@ -345,7 +345,7 @@ class Main {
             scene: this._scene,
             resourcePath: './model/wooden_board/',
             resourceName: 'scene.gltf',
-            rotation: [0, 3.14/2 -1.5, 0],
+            rotation: [0, 3.14/2 +1.5, 0],
             scale: 12,
             emissive: new THREE.Color(0x000000),
             specular: new THREE.Color(0x000000),
@@ -362,7 +362,7 @@ class Main {
         pos = new THREE.Vector3(
             -65,
             0,
-            170
+            185
         );
         const e5 = new entity.Entity();
         e5.setType('tiger');
