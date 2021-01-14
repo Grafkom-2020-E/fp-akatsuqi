@@ -193,6 +193,133 @@ class Main {
         }
     }
 
+    loadBoard(){
+        // buat deer
+        let pos = new THREE.Vector3(
+            30,
+            0,
+            10
+        );
+        const e6 = new entity.Entity();
+    
+        e6.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/wooden_board/',
+            resourceName: 'scene.gltf',
+            rotation: [0, -1.5, 0],
+            scale: 12,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }));
+        e6.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e6.setPosition(pos);
+        this._entityManager.addEntity(e6);
+        e6.setActive(false);
+        
+        // buat arma
+        pos = new THREE.Vector3(
+            30,
+            0,
+            90
+        );
+        const e1 = new entity.Entity();
+    
+        e1.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/wooden_board/',
+            resourceName: 'scene.gltf',
+            rotation: [0, -1.5, 0],
+            scale: 12,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }));
+        e1.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e1.setPosition(pos);
+        this._entityManager.addEntity(e1);
+        e1.setActive(false);
+    
+        // buat kuda
+        pos = new THREE.Vector3(
+            30,
+            0,
+            150
+        );
+        const e2 = new entity.Entity();
+    
+        e2.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/wooden_board/',
+            resourceName: 'scene.gltf',
+            rotation: [0, -1.5, 0],
+            scale: 12,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }));
+        e2.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e2.setPosition(pos);
+        this._entityManager.addEntity(e2);
+        e2.setActive(false);
+    
+        // buat jerapah
+        pos = new THREE.Vector3(
+            -10,
+            0,
+            210
+        );
+        const e3 = new entity.Entity();
+    
+        e3.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/wooden_board/',
+            resourceName: 'scene.gltf',
+            rotation: [0, 3.14/2 +1.5, 0],
+            scale: 12,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }));
+        e3.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e3.setPosition(pos);
+        this._entityManager.addEntity(e3);
+        e3.setActive(false);
+    
+        // buat jerapah
+        pos = new THREE.Vector3(
+            10,
+            0,
+            220
+        );
+        const e4 = new entity.Entity();
+    
+        e4.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/wooden_board/',
+            resourceName: 'scene.gltf',
+            rotation: [0, 3.14/2 -1.5, 0],
+            scale: 12,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }));
+        e4.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e4.setPosition(pos);
+        this._entityManager.addEntity(e4);
+        e4.setActive(false);
+    }
+
 
     loadDeer(){
         let pos = new THREE.Vector3(
