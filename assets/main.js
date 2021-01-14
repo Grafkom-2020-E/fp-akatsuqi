@@ -66,6 +66,8 @@ class Main {
             bgMain.style.display = 'none'
             const container = document.getElementById('container');
             container.style.display = 'block';
+            const guide = document.getElementById('guide');
+            guide.style.display = 'block';
         }
     }
 

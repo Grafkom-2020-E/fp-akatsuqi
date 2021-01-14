@@ -43,6 +43,7 @@ export const player_input = (() => {
     }
 
     _onKeyDown(event) {
+      console.log(event.keyCode)
       switch (event.keyCode) {
         case 87: // w
           this._keys.forward = true;
@@ -55,6 +56,18 @@ export const player_input = (() => {
           break;
         case 68: // d
           this._keys.right = true;
+          break;
+        case 69: // e
+          const container = document.getElementById('container3');
+          const container3 = document.getElementById('container5');
+          container3.innerHTML = "<span style='border:1px solid white; border-radius: 50%;'>E</span> Interaksi"
+          container.style.display = 'block';
+          break;
+        case 70: // f
+          const container2 = document.getElementById('container4');
+          const container4 = document.getElementById('container6');
+          container4.innerHTML = "F"
+          container2.style.display = 'block';
           break;
       }
     }
@@ -72,6 +85,14 @@ export const player_input = (() => {
           break;
         case 68: // d
           this._keys.right = false;
+          break;
+        case 69: // e
+          const container = document.getElementById('container3');
+          container.style.display = 'none';
+          break;
+        case 70: // f
+          const container2 = document.getElementById('container4');
+          container2.style.display = 'none';
           break;
       }
     }

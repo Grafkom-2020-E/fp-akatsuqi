@@ -128,8 +128,8 @@ export const player_entity = (() => {
         // const d = ((pos.x - e._position.x) ** 2 + (pos.z - e._position.z) ** 2) ** 0.5;
         // HARDCODED
         if (e_type != '') {
-          console.log(e_range)
-          console.log(pos)
+          // console.log(e_range)
+          // console.log(pos)
           if(((pos.x > e_range.batas_bawah[0] && pos.z > e_range.batas_bawah[1]) && (pos.x < e_range.batas_atas[0] && pos.z < e_range.batas_atas[1] )))
           collisions.push(nearby[i].entity);
         }
