@@ -148,12 +148,45 @@ class Main {
         this.loadTortoise();
         this.loadHorse();
         this.loadGorilla();
+        // this.loadText();
+        // this.loadFloor();
         // this.loadDonkey();
         this.loadBear();
         this.loadClouds();
         this.loadSky();
         this._previousRAF = null;
         this.requestAnimation();
+    }
+
+    loadFloor(){
+        let xposisib = 140;
+        let zposisib = 400;
+        for(let i = 0; i < 17 ; i ++){
+            let pos = new THREE.Vector3(
+                xposisib,
+                -20,
+                zposisib
+            );
+            const e4 = new entity.Entity();
+            e4.addComponent(new gltf.StaticModelComponent({
+                scene: this._scene,
+                resourcePath: './model/stone_floor (1)/',
+                resourceName: 'scene.gltf',
+                scale: 40,
+                emissive: new THREE.Color(0x000000),
+                specular: new THREE.Color(0x000000),
+                receiveShadow: true,
+                castShadow: true,
+                rotation: [0, 3.14, 0],
+
+            }) 
+            );
+            e4.addComponent(
+                new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+            e4.setPosition(pos);
+            this._entityManager.addEntity(e4);
+            e4.setActive(false);
+        }
     }
 
     loadDeer(){
@@ -1700,12 +1733,11 @@ class Main {
     }
 
     loadPohonKeliling(){
-        let xposisi = 150;
+        let xposisi = 155;
         let zposisi = 0;
         let xposisib = 140;
         let zposisib = 400;
         for(let i = 0; i < 17 ; i ++){
-            console.log(Math.random()%60);
             let pos = new THREE.Vector3(
                 xposisi-=1,
                 0,
