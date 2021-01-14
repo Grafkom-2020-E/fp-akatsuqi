@@ -202,7 +202,7 @@ class Main {
             10
         );
         const e6 = new entity.Entity();
-        e6.setType('rusa');
+        e6.setType('deer');
         e6.setId('5ffff56abfb6bacaaf78df52');
     
         e6.addComponent(new gltf.StaticModelComponent({
@@ -229,7 +229,7 @@ class Main {
             67
         );
         const e1 = new entity.Entity();
-        e1.setType('Trenggiling');
+        e1.setType('armadillo');
         e1.setId('5ffff743bfb6bacaaf78df53');
     
         e1.addComponent(new gltf.StaticModelComponent({
@@ -256,7 +256,7 @@ class Main {
             108
         );
         const e7 = new entity.Entity();
-        e7.setType('Kura-kura');
+        e7.setType('tortoise');
         e7.setId('5ffff81dbfb6bacaaf78df54');
     
         e7.addComponent(new gltf.StaticModelComponent({
@@ -283,7 +283,7 @@ class Main {
             150
         );
         const e2 = new entity.Entity();
-        e2.setType('Kuda');
+        e2.setType('horse');
         e2.setId('5ffff8b6bfb6bacaaf78df55');
     
         e2.addComponent(new gltf.StaticModelComponent({
@@ -310,7 +310,7 @@ class Main {
             232
         );
         const e3 = new entity.Entity();
-        e3.setType('Jerapah');
+        e3.setType('giraffe');
         e3.setId('5ffff95bbfb6bacaaf78df56');
     
         e3.addComponent(new gltf.StaticModelComponent({
@@ -337,7 +337,7 @@ class Main {
             255
         );
         const e4 = new entity.Entity();
-        e4.setType('Gajah');
+        e4.setType('elephant');
         e4.setId('5ffff1ccbfb6bacaaf78df51');
     
         e4.addComponent(new gltf.StaticModelComponent({
@@ -364,7 +364,7 @@ class Main {
             170
         );
         const e5 = new entity.Entity();
-        e5.setType('Harimau');
+        e5.setType('tiger');
         e5.setId('5ffffa09bfb6bacaaf78df57');
     
         e5.addComponent(new gltf.StaticModelComponent({
@@ -391,7 +391,7 @@ class Main {
             120
         );
         const e8 = new entity.Entity();
-        e8.setType('Beruang');
+        e8.setType('bear');
         e8.setId('5ffffaae1fc2ecf90c474676');
     
         e8.addComponent(new gltf.StaticModelComponent({
@@ -418,7 +418,7 @@ class Main {
             40
         );
         const e9 = new entity.Entity();
-        e8.setType('Gorila');
+        e8.setType('gorilla');
         e8.setId('5ffffbb91fc2ecf90c474677');
     
         e9.addComponent(new gltf.StaticModelComponent({
