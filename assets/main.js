@@ -58,7 +58,9 @@ class Main {
             const bgMain = document.querySelector('.bg-main');
             bgMain.style.display = 'none'
             const container = document.getElementById('container');
+            const container2 = document.getElementById('container2');
             container.style.display = 'block';
+            container2.style.display = 'block';
         }
     }
 
@@ -162,8 +164,7 @@ class Main {
     }
 
     myFunction() {
-        document.getElementById('panel').innerHTML = '<h1 style="color:white"> coba </h1> ';
-        console.log(document.getElementById('panel').value);
+        document.getElementById('panel').innerHTML = '<h1> GAJAH </h1><p> mamalia besar dari famili Elephantidae dan ordo Proboscidea. Secara tradisional, terdapat dua spesies yang diakui, yaitu gajah afrika (Loxodonta africana) dan gajah asia (Elephas maximus), walaupun beberapa bukti menunjukkan bahwa gajah semak afrika dan gajah hutan afrika merupakan spesies yang berbeda (L. africana dan L. cyclotis). Gajah tersebar di seluruh Afrika sub-Sahara, Asia Selatan, dan Asia Tenggara. Elephantidae adalah satu-satunya famili dari ordo Proboscidea yang masih ada; famili lain yang kini sudah punah termasuk mamut dan mastodon. Gajah afrika jantan merupakan hewan darat terbesar dengan tinggi hingga 4 m dan massa yang juga dapat mencapai 7.000 kg. Gajah memiliki ciri-ciri khusus, dan yang paling mencolok adalah belalai atau proboscis yang digunakan untuk banyak hal, terutama untuk bernapas, menghisap air, dan mengambil benda. Gigi serinya tumbuh menjadi taring yang dapat digunakan sebagai senjata dan alat untuk memindahkan benda atau menggali. Daun telinganya yang besar membantu mengatur suhu tubuh mereka. Gajah afrika memiliki telinga yang lebih besar dan punggung yang cekung, sementara telinga gajah asia lebih kecil dan punggungnya cembung.</p>';
       }
 
     loadFloor(){
