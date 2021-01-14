@@ -295,7 +295,7 @@ class Main {
         this._entityManager.addEntity(e3);
         e3.setActive(false);
     
-        // buat jerapah
+        // buat gajah
         pos = new THREE.Vector3(
             10,
             0,
@@ -319,6 +319,82 @@ class Main {
         e4.setPosition(pos);
         this._entityManager.addEntity(e4);
         e4.setActive(false);
+
+        // buat macan
+        pos = new THREE.Vector3(
+            -65,
+            0,
+            170
+        );
+        const e5 = new entity.Entity();
+    
+        e5.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/wooden_board/',
+            resourceName: 'scene.gltf',
+            rotation: [0, 1.5, 0],
+            scale: 12,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }));
+        e5.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e5.setPosition(pos);
+        this._entityManager.addEntity(e5);
+        e5.setActive(false);
+
+        // buat beruang
+        pos = new THREE.Vector3(
+            -65,
+            0,
+            120
+        );
+        const e8 = new entity.Entity();
+    
+        e8.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/wooden_board/',
+            resourceName: 'scene.gltf',
+            rotation: [0, 1.5, 0],
+            scale: 12,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }));
+        e8.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e8.setPosition(pos);
+        this._entityManager.addEntity(e8);
+        e8.setActive(false);
+
+        // buat gorila
+        pos = new THREE.Vector3(
+            -65,
+            0,
+            40
+        );
+        const e9 = new entity.Entity();
+    
+        e9.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/wooden_board/',
+            resourceName: 'scene.gltf',
+            rotation: [0, 1.5, 0],
+            scale: 12,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }));
+        e9.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e9.setPosition(pos);
+        this._entityManager.addEntity(e9);
+        e9.setActive(false);
+
     }
 
     loaddirt(){
