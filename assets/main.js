@@ -140,6 +140,7 @@ class Main {
         this.loadTembokKiri();
         this.loadTembokKanan();
         this.loadTembokBelakang();
+        this.loadPohonKeliling();
         this.loadElephant();
         this.loadArmadillo();
         this.loadGiraffe();
@@ -1723,6 +1724,33 @@ class Main {
         this._entityManager.addEntity(e3);
         e3.setActive(false);
     }
+
+    loadPohonKeliling(){
+        let pos = new THREE.Vector3(
+            0,
+            0,
+            0
+        );
+        const e2 = new entity.Entity();
+        e2.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/pohon6/',
+            resourceName: 'scene.gltf',
+            scale: 14,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+            rotation: [0, 3.14, 0],
+
+        }) 
+        );
+        e2.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e2.setPosition(pos);
+        this._entityManager.addEntity(e2);
+        e2.setActive(false);
+        }
 
     addPlayerCamera(){
         const camera = new entity.Entity();
