@@ -9,6 +9,7 @@ import { third_person_camera } from './component/third-person-camera.js';
 import { spatial_hash_grid } from './component/spatial-hash-grid.js';
 import { spatial_grid_controller } from './component/spatial-grid-controller.js';
 import { npc_factory } from './component/npc-factory.js';
+import { api_manager } from './component/api.js';
 
 const _VS = `
 varying vec3 vWorldPosition;
@@ -34,13 +35,19 @@ void main() {
   gl_FragColor = vec4( mix( bottomColor, topColor, max( pow( max( h , 0.0), exponent ), 0.0 ) ), 1.0 );
 }`;
 
-var audio = new Audio ('assets/sounds/mainsound.mp3');
-audio.play()
-
 class Main {
     constructor(){        
+        this.initMusic();
+        this.loadAPI();
         this.initLoading();
         this.initialize();
+    }
+    initMusic(){
+        this.audio = new Audio ('assets/sounds/mainsound.mp3');
+        this.audio.play()
+    }
+    loadAPI(){
+        this.api_manager = new api_manager.ApiManager();
     }
     initLoading(){
         this.loadingDuration = 5000;
@@ -58,9 +65,7 @@ class Main {
             const bgMain = document.querySelector('.bg-main');
             bgMain.style.display = 'none'
             const container = document.getElementById('container');
-            const container2 = document.getElementById('container2');
             container.style.display = 'block';
-            container2.style.display = 'block';
         }
     }
 
@@ -151,21 +156,13 @@ class Main {
         this.loadTiger();
         this.loadTortoise();
         this.loadHorse();
-        this.loadGorilla();
-        // this.loadText();
-        // this.loadFloor();
-        // this.loadDonkey();
-        this.myFunction();
+        this.loadGorilla();             
         this.loadBear();
         this.loadClouds();
         this.loadSky();
         this._previousRAF = null;
         this.requestAnimation();
     }
-
-    myFunction() {
-        document.getElementById('panel').innerHTML = '<h1> GAJAH </h1><p> mamalia besar dari famili Elephantidae dan ordo Proboscidea. Secara tradisional, terdapat dua spesies yang diakui, yaitu gajah afrika (Loxodonta africana) dan gajah asia (Elephas maximus), walaupun beberapa bukti menunjukkan bahwa gajah semak afrika dan gajah hutan afrika merupakan spesies yang berbeda (L. africana dan L. cyclotis). Gajah tersebar di seluruh Afrika sub-Sahara, Asia Selatan, dan Asia Tenggara. Elephantidae adalah satu-satunya famili dari ordo Proboscidea yang masih ada; famili lain yang kini sudah punah termasuk mamut dan mastodon. Gajah afrika jantan merupakan hewan darat terbesar dengan tinggi hingga 4 m dan massa yang juga dapat mencapai 7.000 kg. Gajah memiliki ciri-ciri khusus, dan yang paling mencolok adalah belalai atau proboscis yang digunakan untuk banyak hal, terutama untuk bernapas, menghisap air, dan mengambil benda. Gigi serinya tumbuh menjadi taring yang dapat digunakan sebagai senjata dan alat untuk memindahkan benda atau menggali. Daun telinganya yang besar membantu mengatur suhu tubuh mereka. Gajah afrika memiliki telinga yang lebih besar dan punggung yang cekung, sementara telinga gajah asia lebih kecil dan punggungnya cembung.</p>';
-      }
 
     loadFloor(){
         let xposisib = 0;
@@ -205,6 +202,7 @@ class Main {
             25
         );
         const e6 = new entity.Entity();
+
         e6.addComponent(new gltf.StaticModelComponent({
             scene: this._scene,
             resourcePath: './model/rusa/',
@@ -251,6 +249,11 @@ class Main {
             1
         );
         const e = new entity.Entity();
+        e.setType('rusa');
+        e.setRange({
+            batas_bawah:[41.55,3.02],
+            batas_atas: [42.55, 20.82],
+        })
         e.addComponent(new gltf.StaticModelComponent({
             scene: this._scene,
             resourcePath: './model/fence_wood/',
@@ -275,6 +278,11 @@ class Main {
             20
         );
         const e2 = new entity.Entity();
+        e2.setType('rusa');
+        e2.setRange({
+            batas_bawah:[41.55,21.82],
+            batas_atas: [42.55, 39.82],
+        })
         e2.addComponent(new gltf.StaticModelComponent({
             scene: this._scene,
             resourcePath: './model/fence_wood/',
@@ -285,7 +293,7 @@ class Main {
             specular: new THREE.Color(0x000000),
             receiveShadow: true,
             castShadow: true,
-        }) 
+        })
         );
         e2.addComponent(
             new spatial_grid_controller.SpatialGridController({grid: this._grid}));
@@ -299,6 +307,11 @@ class Main {
             40
         );
         const e3 = new entity.Entity();
+        e3.setType('rusa');
+        e3.setRange({
+            batas_bawah:[41.55,41.01],
+            batas_atas: [42.55, 59.82],
+        })
         e3.addComponent(new gltf.StaticModelComponent({
             scene: this._scene,
             resourcePath: './model/fence_wood/',
@@ -371,6 +384,7 @@ class Main {
             60
         );
         const e8 = new entity.Entity();
+        e8.setType('rusa');
         e8.addComponent(new gltf.StaticModelComponent({
             scene: this._scene,
             resourcePath: './model/fence_wood/',
@@ -1922,6 +1936,9 @@ class Main {
             }      
             if (this.isLoading) {
                 this.updateLoadingBar(t - this._previousRAF)
+            }
+            if (this.audio.paused){
+                this.audio.play();
             }
             this.requestAnimation();
             this._threeJS.render(this._scene, this._camera);

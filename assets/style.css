@@ -1,3 +1,6 @@
+body{
+  font-family: 'Open Sans', sans-serif;
+}
   body {
     width: 100%;
     height: 100%;
@@ -6,6 +9,67 @@
     margin: 0;
     padding: 0;
     overscroll-behavior: none;
+  }
+  #container2{
+    position: absolute;
+    z-index: 10;
+    border-radius: 15px;
+    width: 70vh;
+    height: 500px;
+    background: url('../assets/img/WoodBackground54342.jpg');
+  }
+
+  #info{
+    position: absolute;
+    z-index: 20;
+    left: 17%;
+  }
+
+  #info, #container2 .image{
+    display: flex;
+    justify-content: center;
+  }
+
+  #container2 .image img{
+    margin-top: 50px;
+    width: 250px;
+    height: 250px;
+    border-radius: 10%;
+  }
+
+  .animal_info{
+    padding: 25px 50px;
+    text-shadow: 1px 2px #111;
+    color: white;
+    align-items: baseline;
+    font-size: 20px;
+  }
+
+  .animal_info > div{
+    display: flex;
+    align-items: baseline;
+  }
+
+  .animal_info > div > h3{
+    flex: 1;
+    margin: 0;
+  }
+
+  .animal_info > div > p{
+    flex: 2;
+  }
+
+  
+
+  #info h2{
+    background: url(../assets/img/depositphotos_57833223-Vector-wood-texture.jpg);
+    margin-top: -34px;
+    background-size: cover;
+    padding: 11px 59px;
+    color: #f3f9f1;
+    text-shadow: 1px 2px 3px #000;
+    font-size: 37px;
+    border-radius: 5px;
   }
   
   .container {
@@ -16,7 +80,7 @@
 
   .mainpage{
     position:absolute;
-    font-family:'Architects Daughter', sans-serif;
+    font-family:'Architects Daughter', sans-serif !important;
     font-weight:bold;
     align-items: center;
     text-align:center;

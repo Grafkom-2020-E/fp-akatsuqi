@@ -11,6 +11,24 @@ export const entity = (() => {
       this._rotation = new THREE.Quaternion();
       this._handlers = {};
       this._parent = null;
+      this._type = '';
+      this._range= {};
+    }
+
+    setType(type){
+      this._type = type;
+    }
+
+    getType(){
+      return this._type;
+    }
+
+    setRange(range){
+      this._range = range;
+    }
+
+    getRange(){
+      return this._range;
     }
 
     registerHandler(n, h) {

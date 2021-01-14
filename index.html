@@ -6,15 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FP AKATZOOKI - Akatsuqi Team</title>
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.0/jquery.nicescroll.min.js"></script>
 </head>
-<body>
-    <div class="container" style="overflow: scroll;position: absolute;z-index: 10;display: none;background-color: white;border-radius: 10px;width: 70vh;height: 50vh;margin: 20px 0px 0px 50px;" id="container2">
-        <center>
-            <div id="panel">
-                
-            </div>
-        </center>
-    </div>
+<body>    
     <div class="container" style="display: none;" id="container"></div>
     <center>
     <div class="bg-main">
@@ -35,7 +32,9 @@
     </div>
     </center>
 
-
+    <script>
+        $("#container2").niceScroll({cursorcolor:"#fff", cursorwidth:"10px"});
+    </script>
     <script src="assets/main.js" type="module"></script>
 </body>
 </html>

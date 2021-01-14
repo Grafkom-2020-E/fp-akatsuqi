@@ -113,15 +113,7 @@ export const player_entity = (() => {
       });
     }
 
-    findIntersection(pos) {
-      const isAlive = (c) => {
-        const h = c.entity.getComponent('HealthComponent');
-        if (!h) {
-          return true;
-        }
-        return h._health > 0;
-      };
-
+    findIntersection(pos) {      
       const grid = this.getComponent('SpatialGridController');
       const nearby = grid.FindNearbyEntities(5)
       const collisions = [];
@@ -129,9 +121,16 @@ export const player_entity = (() => {
 
       for (let i = 0; i < nearby.length; ++i) {
         const e = nearby[i].entity;
-        const d = ((pos.x - e._position.x) ** 2 + (pos.z - e._position.z) ** 2) ** 0.5;
+        const e_range = e.getRange();
+        const e_type = e.getType();
+        
+        console.log(e._position.x, e._position.z, e.getType())
+        // const d = ((pos.x - e._position.x) ** 2 + (pos.z - e._position.z) ** 2) ** 0.5;
         // HARDCODED
-        if (d <= 4) {
+        if (e_type != '') {
+          console.log(e_range)
+          console.log(pos)
+          if(((pos.x > e_range.batas_bawah[0] && pos.z > e_range.batas_bawah[1]) && (pos.x < e_range.batas_atas[0] && pos.z < e_range.batas_atas[1] )))
           collisions.push(nearby[i].entity);
         }
       }
