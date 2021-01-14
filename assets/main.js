@@ -1990,15 +1990,10 @@ class Main {
     }
 
     loadPohonTengah(){
-        let xposisi = 155;
-        let zposisi = 0;
-        let xposisib = 140;
-        let zposisib = 400;
-
         let pos = new THREE.Vector3(
             20,
             0,
-            200
+            190
         );
         const e2 = new entity.Entity();
         e2.addComponent(new gltf.StaticModelComponent({
@@ -2021,9 +2016,9 @@ class Main {
         e2.setActive(false);
 
         pos = new THREE.Vector3(
-            -30,
+            -40,
             0,
-            100
+            90
         );
         const e3 = new entity.Entity();
         e3.addComponent(new gltf.StaticModelComponent({
@@ -2046,9 +2041,9 @@ class Main {
         e3.setActive(false);
 
         pos = new THREE.Vector3(
-            10,
+            19,
             0,
-            70
+            50
         );
         const e4 = new entity.Entity();
         e4.addComponent(new gltf.StaticModelComponent({
@@ -2070,6 +2065,30 @@ class Main {
         this._entityManager.addEntity(e4);
         e4.setActive(false);
         
+        pos = new THREE.Vector3(
+            -40,
+            0,
+            140
+        );
+        const e5 = new entity.Entity();
+        e5.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/pohon6/',
+            resourceName: 'scene.gltf',
+            scale: 40,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+            rotation: [0, 3.14, 0],
+
+        }) 
+        );
+        e5.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e5.setPosition(pos);
+        this._entityManager.addEntity(e5);
+        e5.setActive(false);
     }
 
     loadPohonKeliling(){
