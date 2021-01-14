@@ -139,6 +139,10 @@ export const player_entity = (() => {
               this.uiController.displayAnimalInformation(data)
             }
           }
+          if (input._keys.e) {
+            this.audio = new Audio (`assets/sounds/${e.getType()}.mp3`);
+            this.audio.play()
+          }
           collisions.push(nearby[i].entity)
         }
         // HARDCODED
