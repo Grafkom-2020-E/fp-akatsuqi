@@ -157,6 +157,7 @@ class Main {
         this.loadBear();
         this.loadClouds();
         this.loadSky();
+        this.loadBoard();
         this._previousRAF = null;
         this.requestAnimation();
     }
@@ -191,6 +192,7 @@ class Main {
             e4.setActive(false);
         }
     }
+
 
     loadDeer(){
         let pos = new THREE.Vector3(

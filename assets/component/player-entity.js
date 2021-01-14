@@ -122,7 +122,7 @@ export const player_entity = (() => {
       const collisions = [];
       // console.log(pos)
       const apiData = this.apiManager.getData();
-      const collision_exception = ['big_gate', 'floor'];
+      const collision_exception = ['big_gate', 'floor','dirt'];
 
       const input = this.getComponent('BasicCharacterControllerInput');
       for (let i = 0; i < nearby.length; ++i) {
