@@ -224,7 +224,7 @@ class Main {
         pos = new THREE.Vector3(
             30,
             0,
-            75
+            67
         );
         const e1 = new entity.Entity();
     
@@ -249,9 +249,9 @@ class Main {
         pos = new THREE.Vector3(
             30,
             0,
-            120
+            108
         );
-        const e1 = new entity.Entity();
+        const e7 = new entity.Entity();
     
         e7.addComponent(new gltf.StaticModelComponent({
             scene: this._scene,
@@ -297,9 +297,9 @@ class Main {
     
         // buat jerapah
         pos = new THREE.Vector3(
-            -10,
+            -10-10,
             0,
-            197
+            232
         );
         const e3 = new entity.Entity();
     
@@ -322,9 +322,9 @@ class Main {
     
         // buat gajah
         pos = new THREE.Vector3(
-            10,
+            10-10,
             0,
-            220
+            255
         );
         const e4 = new entity.Entity();
     
