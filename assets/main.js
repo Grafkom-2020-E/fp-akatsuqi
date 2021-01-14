@@ -224,7 +224,7 @@ class Main {
         pos = new THREE.Vector3(
             30,
             0,
-            90
+            75
         );
         const e1 = new entity.Entity();
     
@@ -244,6 +244,31 @@ class Main {
         e1.setPosition(pos);
         this._entityManager.addEntity(e1);
         e1.setActive(false);
+
+        // buat kura
+        pos = new THREE.Vector3(
+            30,
+            0,
+            120
+        );
+        const e1 = new entity.Entity();
+    
+        e7.addComponent(new gltf.StaticModelComponent({
+            scene: this._scene,
+            resourcePath: './model/wooden_board/',
+            resourceName: 'scene.gltf',
+            rotation: [0, -1.5, 0],
+            scale: 12,
+            emissive: new THREE.Color(0x000000),
+            specular: new THREE.Color(0x000000),
+            receiveShadow: true,
+            castShadow: true,
+        }));
+        e7.addComponent(
+            new spatial_grid_controller.SpatialGridController({grid: this._grid}));
+        e7.setPosition(pos);
+        this._entityManager.addEntity(e7);
+        e7.setActive(false);
     
         // buat kuda
         pos = new THREE.Vector3(
@@ -274,7 +299,7 @@ class Main {
         pos = new THREE.Vector3(
             -10,
             0,
-            210
+            197
         );
         const e3 = new entity.Entity();
     
